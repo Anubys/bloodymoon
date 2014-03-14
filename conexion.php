@@ -1,9 +1,9 @@
 <?php
 @session_start();
 $dbhost="localhost";  // host del MySQL (generalmente localhost)
-$dbusuario="vampiro"; // aqui debes ingresar el nombre de usuario
+$dbusuario="root"; // aqui debes ingresar el nombre de usuario
                      // para acceder a la base
-$dbpassword="v@mpir0"; // password de acceso para el usuario de la
+$dbpassword="darkbit666"; // password de acceso para el usuario de la
                      // linea anterior
 $db="juego";        // Seleccionamos la base con la cual trabajar
 $conexion = @mysql_connect($dbhost, $dbusuario, $dbpassword);
