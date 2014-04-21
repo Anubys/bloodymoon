@@ -14,6 +14,16 @@ if(!isset($_SESSION['uid'])){
             <td>Usuario:</td>
             <td><i><?php echo $usuario['nomusuario']; ?></i></td>
         </tr>
+		<td>Raza:</td>
+            <td><i><?php echo $usuario['raza']; ?></i></td>
+        </tr>
+		<td>Caracteristicas:</td>
+            <td>Fuerza:<i><?php echo $usuario['FUE']; ?></i></td>
+			<td>Agilidad:<i><?php echo $usuario['AGI']; ?></i></td>
+			<td>Inteligencia:<i><?php echo $usuario['INT']; ?></i></td>
+			<td>Carisma:<i><?php echo $usuario['CAR']; ?></i></td>
+			<td>Resistencia:<i><?php echo $usuario['RES']; ?></i></td>
+        </tr>
         
     </table>
     
