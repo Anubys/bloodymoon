@@ -1,26 +1,43 @@
-<?php 
+<?php
+session_start();
+include("header.php");
 include("conexion.php");
-?> 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
- <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
-<head><title>Registro Usuario</title> 
- <!--  Añadimos la linea de meta en UTF-8 por el tema de las ñ y demás caracteres especiales esta linea siempre va entre el head -->   
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
-</head>
-<body>
-<FORM ACTION="registra_usuario.php" METHOD="post"> 
-<center><b><strong><h2>Creacion de personaje</h2></strong></b><br></center>
-</br><center>
-<b> Usuario</b>  <INPUT TYPE="text" NAME="nombre_usuario" SIZE=10 MAXLENGTH=10>
-<b> Password</b> <INPUT TYPE="password" NAME="clave_usuario" SIZE=10 MAXLENGTH=10>
-<b> E-mail</b>   <INPUT TYPE="text" NAME="email" SIZE=10 MAXLENGTH=10
-<INPUT TYPE="hidden" NAME="validado" VALUE="FALSE"
-<p></p>
-<center><INPUT TYPE="submit" CLASS="boton" VALUE="CREAR PERSONAJE" size="20"></input></center>
-</FORM>
-</body>
-</html>
- 
-
+?>
+<br /><br />
+<?php
+if(isset($_POST['registro'])){
+    $nomusuario = ($_POST['nomusuario']);
+    $password = ($_POST['password']);
+    $email = ($_POST['email']);
+    
+    if($nomusuario == "" || $password == "" || $email == ""){
+        echo "Por favor complementa todos los campos!";
+    }elseif(strlen($nomusuario) > 20){
+        echo "El nombre del usuario no puede contener mas de 20 caracteres!";
+    }elseif(strlen($email) > 100){
+        echo "El campo de e-mail no puede contener mas de 100 caracteres!";
+    }else{
+        $register1 = mysql_query("SELECT `id` FROM `usuario` WHERE `nomusuario`='$nomusuario'") or die(mysql_error());
+        $register2 = mysql_query("SELECT `id` FROM `usuario` WHERE `email`='$email'") or die(mysql_error());
+        if(mysql_num_rows($register1) > 0){
+            echo "Este usuario ya esta en uso!";
+        }elseif(mysql_num_rows($register2) > 0){
+            echo "Este e-mail ya esta en uso!";
+        }else{
+                        $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`) VALUES ('$nomusuario','".md5($password)."','$email')") or die(mysql_error());
+            
+            echo "Registro completo!";
+        }
+    }
+}
+?>
+<br /><br />
+<form action="registro.php" method="POST">
+Usuario: <input type="text" name="nomusuario"/><br />
+Password: <input type="password" name="password"/><br />
+E-mail: <input type="text" name="email"/><br />
+<input type="submit" name="registro" value="Registro"/>
+</form>
+<?php
+include("footer.php");
+?>
