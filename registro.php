@@ -9,6 +9,7 @@ if(isset($_POST['registro'])){
     $nomusuario = ($_POST['nomusuario']);
     $password = ($_POST['password']);
     $email = ($_POST['email']);
+	$raza = ($_POST['raza']);
     
     if($nomusuario == "" || $password == "" || $email == ""){
         echo "Por favor complementa todos los campos!";
@@ -24,7 +25,7 @@ if(isset($_POST['registro'])){
         }elseif(mysql_num_rows($register2) > 0){
             echo "Este e-mail ya esta en uso!";
         }else{
-                        $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`) VALUES ('$nomusuario','".md5($password)."','$email')") or die(mysql_error());
+                        $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`,`raza`,`FUE`,`AGI`,`INT`,`CAR`,`RES`) VALUES ('$nomusuario','".md5($password)."','$email','$raza','5','5','5','5','5')") or die(mysql_error());
             
             echo "Registro completo!";
         }
@@ -36,6 +37,12 @@ if(isset($_POST['registro'])){
 Usuario: <input type="text" name="nomusuario"/><br />
 Password: <input type="password" name="password"/><br />
 E-mail: <input type="text" name="email"/><br />
+ <label>Raza:</label>
+<select name="raza">
+<option value="Vampiro">Vampiro</option>
+<option value="Hombre Lobo">Hombre Lobo</option>
+<option value="Humano">Humano</option>
+</select>
 <input type="submit" name="registro" value="Registro"/>
 </form>
 <?php
