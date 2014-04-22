@@ -1,7 +1,7 @@
 window.onload = function(){
     var options = {
         zoom: 15
-        , center: new google.maps.LatLng(37.776223,-122.4230946)
+        , center: new google.maps.LatLng(-31.4289,-62.0844)
         , mapTypeId: google.maps.MapTypeId.ROADMAP
  
         , backgroundColor: '#ffffff'
@@ -35,5 +35,18 @@ window.onload = function(){
         }
     };
     var map = new google.maps.Map(document.getElementById('map'), options);
+	new google.maps.Marker({
+		position: map.getCenter()
+		, map: map
+		, title: 'Pulsa aquí'
+		, icon: 'http://gmaps-samples.googlecode.com/svn/trunk/markers/green/blank.png'
+		, cursor: 'default'
+		, draggable: true
+	});
+};
+	
+	
+	
+	
 };
 
