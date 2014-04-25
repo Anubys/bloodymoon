@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-04-2014 a las 09:10:37
+-- Tiempo de generación: 25-04-2014 a las 15:40:20
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -44,16 +44,25 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `nomusuario` varchar(20) COLLATE utf8_spanish_ci NOT NULL,
   `password` varchar(32) COLLATE utf8_spanish_ci NOT NULL,
   `email` varchar(100) COLLATE utf8_spanish_ci NOT NULL,
+  `raza` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `FUE` int(10) NOT NULL,
+  `AGI` int(10) NOT NULL,
+  `INT` int(10) NOT NULL,
+  `CAR` int(10) NOT NULL,
+  `RES` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=35 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nomusuario`, `password`, `email`) VALUES
-(29, 'Eduard', '59d59bd0a95db884ec0442c80411d52d', 'notengo'),
-(30, 'julian', '6d122e5ed29245963547ba58b031ecd5', 'nuevo');
+INSERT INTO `usuario` (`id`, `nomusuario`, `password`, `email`, `raza`, `FUE`, `AGI`, `INT`, `CAR`, `RES`) VALUES
+(29, 'Eduard', '59d59bd0a95db884ec0442c80411d52d', 'notengo', '', 3, 1, 0, 3, 0),
+(30, 'julian', '6d122e5ed29245963547ba58b031ecd5', 'nuevo', '', 3, 1, 0, 3, 0),
+(31, 'Kevin', '65e6ca0e8150f97fb4e7b24adefa4bd4', '12345', 'HL', 3, 1, 0, 3, 0),
+(32, 'Jacob', '736b19f69aaca691fecd8400294cc383', 'were', 'Hombre Lobo', 3, 6, 5, 8, 5),
+(34, 'Bella', 'e7e9ec3723447a642f762b2b6a15cfd7', '12345678', 'Vampiro', 8, 5, 5, 8, 5);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
