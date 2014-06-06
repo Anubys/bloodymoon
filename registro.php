@@ -1,6 +1,17 @@
-<?php
+<html>
+<head>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+    <div data-role="header">
+        <h2>Cabecera</h2>
+    </div>
+    <?php
 session_start();
-include("header.php");
 include("conexion.php");
 ?>
 <br /><br />
@@ -37,7 +48,8 @@ if(isset($_POST['registro'])){
     }
 }
 ?>
-<form action="registro.php" method="POST">
+<div data-role="content">
+<form data-ajax="false" method="POST" action="registro.php" >
 Usuario: <input type="text" name="nomusuario"/><br />
 Password: <input type="password" name="password"/><br />
 E-mail: <input type="text" name="email"/><br />
@@ -49,6 +61,8 @@ E-mail: <input type="text" name="email"/><br />
 </select>
 <input type="submit" name="registro" value="Registro"/>
 </form>
-<?php
-include("footer.php");
-?>
+    </div>
+<div data-role="footer">
+        <h2>Pie</h2>
+    </div>
+    </div>
