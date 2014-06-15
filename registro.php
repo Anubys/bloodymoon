@@ -37,9 +37,12 @@ if(isset($_POST['registro'])){
             echo "Este e-mail ya esta en uso!";
         }else{
                         $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`,`raza`,`FUE`,`AGI`,`INT`,`CAR`,`RES`) VALUES ('$nomusuario','".md5($password)."','$email','$raza','5','5','5','5','5')") or die(mysql_error());
+			$ins4 = mysql_query("INSERT INTO `estado` (`sangre_rabia`) VALUES ('10')") or die (mysql_error());
                          if($raza=="Vampiro"){
                             
             echo "Has elegido vampiro";
+	    
+	    
             $upda=mysql_query("UPDATE `usuario` SET FUE=FUE+2,AGI=AGI+3,INT=INT+2,CAR=CAR+2,RES=RES+1" ) or die(mysql_error());
             }
             

@@ -3,7 +3,7 @@
 $dbhost="localhost";  // host del MySQL (generalmente localhost)
 $dbusuario="root"; // aqui debes ingresar el nombre de usuario
                      // para acceder a la base
-$dbpassword="darkbit666"; // password de acceso para el usuario de la
+$dbpassword="bd@admin666"; // password de acceso para el usuario de la
                      // linea anterior
 $db="juego";        // Seleccionamos la base con la cual trabajar
 $conexion = @mysql_connect($dbhost, $dbusuario, $dbpassword);
