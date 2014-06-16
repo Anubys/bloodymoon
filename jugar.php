@@ -27,7 +27,15 @@ if(!isset($_SESSION['uid'])){
     ?>
     <div data-role="content">
     <center><h2>Personaje</h2></center>
-    <br />
+    <table data-role="table" class="ui-responsive">
+	<tr>
+		    <tbody>
+    <td>Reserva de Sangre: <i><?php echo $usuario['sangre_rabia']; ?></i></td
+		      
+        </tr>
+    </tbody>
+    </table>
+        <br />
     
     
 
