@@ -29,13 +29,17 @@ if(!isset($_SESSION['uid'])){
             <td><i><?php echo $usuario['raza']; ?></i></td>
         </tr>
 		<td>Caracteristicas:</td>
-            <td>Fuerza:<i><?php echo $usuario['FUE']; ?></i></td>
-			<td>Agilidad:<i><?php echo $usuario['AGI']; ?></i></td>
-			<td>Inteligencia:<i><?php echo $usuario['INT']; ?></i></td>
-			<td>Carisma:<i><?php echo $usuario['CAR']; ?></i></td>
-			<td>Resistencia:<i><?php echo $usuario['RES']; ?></i></td>
+		
+		        <td>FUE:<i><?php echo $usuario['FUE']; ?></i></td>
+			<td>AGI:<i><?php echo $usuario['AGI']; ?></i></td>
+			<td>INT:<i><?php echo $usuario['INT']; ?></i></td>
+			<td>CAR:<i><?php echo $usuario['CAR']; ?></i></td>
+			<td>REST:<i><?php echo $usuario['RES']; ?></i></td>
+			</tr>
+		 <td>Reserva de Sangre:</td>
+	<td><i><?php echo $usuario['sangre_rabia']; ?></i></td
+		      
         </tr>
-        
     </tbody>
     </table>
 	</div>
