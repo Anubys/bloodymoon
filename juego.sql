@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2014 a las 15:40:20
+-- Tiempo de generación: 23-06-2014 a las 14:34:08
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -23,15 +23,41 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `escena`
+--
+
+CREATE TABLE IF NOT EXISTS `escena` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` text COLLATE utf8_spanish_ci NOT NULL,
+  `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `escena`
+--
+
+INSERT INTO `escena` (`ID`, `nombre`, `descripcion`) VALUES
+(1, 'En el Palacio', 'Un fastuoso palacio de aspecto gotico se levanta ante ti, sus muros negros como la noche y sus fuertes puertas te hacen presentir, que dentro de el se encuentra una persona importante.');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `estado`
 --
 
 CREATE TABLE IF NOT EXISTS `estado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ataque` int(11) NOT NULL,
-  `defensa` int(11) NOT NULL,
+  `sangre_rabia` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+
+--
+-- Volcado de datos para la tabla `estado`
+--
+
+INSERT INTO `estado` (`id`, `sangre_rabia`) VALUES
+(1, 10);
 
 -- --------------------------------------------------------
 
@@ -50,19 +76,17 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `INT` int(10) NOT NULL,
   `CAR` int(10) NOT NULL,
   `RES` int(10) NOT NULL,
+  `sangre_rabia` int(10) NOT NULL,
+  `vida` int(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=35 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=56 ;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`id`, `nomusuario`, `password`, `email`, `raza`, `FUE`, `AGI`, `INT`, `CAR`, `RES`) VALUES
-(29, 'Eduard', '59d59bd0a95db884ec0442c80411d52d', 'notengo', '', 3, 1, 0, 3, 0),
-(30, 'julian', '6d122e5ed29245963547ba58b031ecd5', 'nuevo', '', 3, 1, 0, 3, 0),
-(31, 'Kevin', '65e6ca0e8150f97fb4e7b24adefa4bd4', '12345', 'HL', 3, 1, 0, 3, 0),
-(32, 'Jacob', '736b19f69aaca691fecd8400294cc383', 'were', 'Hombre Lobo', 3, 6, 5, 8, 5),
-(34, 'Bella', 'e7e9ec3723447a642f762b2b6a15cfd7', '12345678', 'Vampiro', 8, 5, 5, 8, 5);
+INSERT INTO `usuario` (`id`, `nomusuario`, `password`, `email`, `raza`, `FUE`, `AGI`, `INT`, `CAR`, `RES`, `sangre_rabia`, `vida`) VALUES
+(55, 'bella', 'e7e9ec3723447a642f762b2b6a15cfd7', 'bella', 'Vampiro', 7, 8, 5, 7, 6, 10, 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
