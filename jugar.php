@@ -39,8 +39,8 @@ if(!isset($_SESSION['uid'])){
     
     
 
-    <iframe src="mapa.php" name="SubHtml"
-      width="400" height="500" scrolling="auto" frameborder="1">
+    <iframe src="timeline.php" name="TimeLine"
+      width="363" height="497" scrolling="auto" frameborder="1">
       <p>Texto alternativo para navegadores que no aceptan iframes.</p>
     </iframe>
   </body>
