@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-06-2014 a las 14:34:08
+-- Tiempo de generación: 26-06-2014 a las 14:31:13
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.9
 
@@ -23,6 +23,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `actores`
+--
+
+CREATE TABLE IF NOT EXISTS `actores` (
+  `nombre` varchar(11) COLLATE utf8_spanish_ci NOT NULL,
+  `charla` text COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `actores`
+--
+
+INSERT INTO `actores` (`nombre`, `charla`) VALUES
+('principe', 'Te hemos echo llamar porque necesitamos de tu ayuda, desde hace algunos dias estamos teniendo problemas con un joven vampiro, bastante revelde que cree que las normas estan echas para saltarselas.\r\nEste vampiro nos ha causado ya innumerables problemas por lo que necesitamos que lo traigas hasta nosotros vivo si es posible.\r\nMis espias me han proporcionado un map de los sitios que frecuenta, por lo que puede ser un buen sitio por donde empezar.');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `escena`
 --
 
@@ -30,15 +48,17 @@ CREATE TABLE IF NOT EXISTS `escena` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` text COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
+  `imagen` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `escena`
 --
 
-INSERT INTO `escena` (`ID`, `nombre`, `descripcion`) VALUES
-(1, 'En el Palacio', 'Un fastuoso palacio de aspecto gotico se levanta ante ti, sus muros negros como la noche y sus fuertes puertas te hacen presentir, que dentro de el se encuentra una persona importante.');
+INSERT INTO `escena` (`ID`, `nombre`, `descripcion`, `imagen`) VALUES
+(1, 'palacio', 'Un fastuoso palacio de aspecto gotico se levanta ante ti, sus muros negros como la noche y sus fuertes puertas te hacen presentir, que dentro de el se encuentra una persona importante.', 'palacio.jpg'),
+(4, 'salon', 'Un salon inmenso se abre ante ti, la majustuosidad del mismo, te nubla la vision.\r\n\r\nDelante de ti, aparecen varias personas, impecablemente vestidas sus palidas pieles reflejan su naturaleza vampirica.\r\n\r\nUna de ellas, se dirije hacia ti.', 'salon.jpg');
 
 -- --------------------------------------------------------
 
