@@ -12,7 +12,7 @@
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
-      <li><a href="#loc.php" data-icon="plus">Localizaciones</a></li>
+      <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
       <li><a href="logout.php" data-icon="star">Logout</a></li>
    </ul>
 </div> 
@@ -26,27 +26,35 @@ if(!isset($_SESSION['uid'])){
 }else{
     ?>
     <div data-role="content">
-    <center><h2>Personaje</h2></center>
+    <!--<center><h2>Personaje</h2></center>-->
     <table data-role="table" class="ui-responsive">
 	<tr>
 		    <tbody>
-    <td>Reserva de Sangre: <i><?php echo $usuario['sangre_rabia']; ?></i></td
+    <td>Sangre: <i><?php echo $usuario['sangre_rabia']; ?></i></td
 		      
         </tr>
     </tbody>
     </table>
         <br />
-    
-    
+	<?php
+    $consulta="SELECT * FROM escena where nombre='palacio'";
+    $resultado = mysql_query($consulta);
+    while ($fila = mysql_fetch_assoc($resultado)) {
+    echo $fila["descripcion"];
+    echo '<img src="'.$fila["imagen"].'">';
+   }
 
-    <iframe src="timeline.php" name="TimeLine"
-      width="363" height="497" scrolling="auto" frameborder="1">
-      <p>Texto alternativo para navegadores que no aceptan iframes.</p>
-    </iframe>
+mysql_free_result($resultado);
+
+?>
+   
+
+    
+    <a href="salon.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php
 }
-include("footer.php");
+//include("footer.php");
 ?>
     </div>
