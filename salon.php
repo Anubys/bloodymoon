@@ -51,7 +51,7 @@ echo "Hola  {$usuario['nomusuario']} acercate te estabamos esperando";
    }
    mysql_free_result($resultado2);
    ?>
-   <a href="armeria.php" data-role="button" data-theme="a">Continuar</a>
+   <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php
