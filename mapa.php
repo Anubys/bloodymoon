@@ -1,19 +1,46 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>test</title>
-    <style>
-    *{ margin: 0; padding: 0; }
-    html, body, #map{
-        width: 100%;
-        height: 100%;
-    }
-    </style>
-    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&amp;language=es"></script>
-    <script type="text/javascript" src="map.js"></script>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
 </head>
 <body>
-    <div id="map"></div>
-</body>
-</html>
+    <div data-role="page">
+    <div data-role="header">
+        <h2>Cabecera</h2>
+	<div data-role="navbar">
+   <ul>
+      <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
+      <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
+      <li><a href="logout.php" data-icon="star">Logout</a></li>
+   </ul>
+</div> 
+    </div>
+    <?php
+session_start();
+include("conexion.php");
+include("sentencias.php");
+if(!isset($_SESSION['uid'])){
+    echo "Tienes que estar logeado para ver esta pagina!";
+}else{
+    ?>
+       <div data-role="content">
+	
+	<table border=0><tr><td align="center">
+<map name="mapa1">
+<area alt="Circle Pig" shape="CIRCLE" coords="172,59,8" href="#bareto.php">
+</map>
+<img src="mapa.jpg" alt="Mapa de imágenes. Pulsa en cada una de los círculos." border="0" usemap="#mapa1">
+<br>
+Pulsa en los círculos para acceder a las secciones!
+</td></tr></table> 
+        
+       </div>
+       </body>
+    </div>
+     <?php
+}
+//include("footer.php");
+?>
+      </div>
