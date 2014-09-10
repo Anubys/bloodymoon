@@ -8,7 +8,7 @@
 <body>
     <div data-role="page">
     <div data-role="header">
-        <h2>Cabecera</h2>
+        <h2>BloodyMoon</h2>
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
@@ -52,7 +52,7 @@ echo "Un camarero, alto y bien formado se acerca hacia ti, dedicandote una magni
    }
    mysql_free_result($resultado2);
    ?>
-<a href="index.html" data-role="button" data-mini="true">Si,gracias</a>
+<a href="interior.php" data-role="button" data-mini="true">Si,gracias</a>
 <a href="index.html" data-role="button" data-mini="true">No,solo voy a echar un vistazo</a>
        </body>
     </div>
