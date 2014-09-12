@@ -53,6 +53,7 @@ mysql_free_result($resultado);
 }
 //include("footer.php");
 ?>
-    </div>
+
+    
 
     
