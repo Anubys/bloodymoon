@@ -18,17 +18,25 @@ if(!isset($_SESSION['uid'])){
 	<div data-role="content">
             <?php
             if($menu=="1") {
-echo "Has seleccionado Mordisco y has echo $ataque1 puntos de daño";
+echo "Te lanzas con los colmillos a su yugular y le haces $ataque1 puntos de daño";
 } elseif ($menu=="2") {
-echo "Has seleccionado Garra y has echo $ataque2 puntos de daño";
+echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
 }  elseif ($menu=="3") {
-	echo "Has seleccionado puñetazo y has echo $ataque3 puntos de daño";
+	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
 	}
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
                                                 }
                          ?>
-                         <script>
-     $(location).attr('href', 'combate.php');
- </script>                            </div>
+                       <?php
+    $consulta2="SELECT * FROM actores where nombre='mujer_punk'";
+    $consultavida = mysql_query($consulta2);
+       while($row = mysql_fetch_assoc($consultavida)){
+$muestravida=$row['vida'];
+}
+  $daño=$muestravida-$ataque1;
+echo "le queda $daño de vida";
+    ?>
+        </div>
+    
