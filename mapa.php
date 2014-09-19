@@ -8,7 +8,7 @@
 <body>
     <div data-role="page">
     <div data-role="header">
-        <h2>Cabecera</h2>
+        <h2>BloodyMoon</h2>
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
