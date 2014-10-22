@@ -37,6 +37,17 @@ $muestravida=$row['vida'];
 }
   $daño=$muestravida-$ataque1;
 echo "le queda $daño de vida";
+$consulta3="SELECT * FROM actores where nombre='mujer_punk'";
+$consultafue = mysql_query($consulta3);
+while($row = mysql_fetch_assoc($consultafue)){
+    $muestrafuerza=$row['FUE'];
+}
+    $ataque_contrario=$aleatorio1+$muestrafuerza;
+$vida=$usuario['vida'];
+echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daño";
+$tu_daño=$vida-$ataque_contrario;
+echo "Te quedan $tu_daño de vida";
     ?>
+    
         </div>
     
