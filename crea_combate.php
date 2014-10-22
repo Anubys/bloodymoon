@@ -37,6 +37,14 @@ $muestravida=$row['vida'];
 }
   $daño=$muestravida-$ataque1;
 echo "le queda $daño de vida";
+$consulta4="SELECT * FROM escena where ID=9";
+    $resultado = mysql_query($consulta4);
+    while ($fila = mysql_fetch_assoc($resultado)) {
+    echo $fila["descripcion"];
+    echo '<img src="'.$fila["imagen"].'">';
+   }
+
+mysql_free_result($resultado);
 $consulta3="SELECT * FROM actores where nombre='mujer_punk'";
 $consultafue = mysql_query($consulta3);
 while($row = mysql_fetch_assoc($consultafue)){
@@ -47,6 +55,14 @@ $vida=$usuario['vida'];
 echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daño";
 $tu_daño=$vida-$ataque_contrario;
 echo "Te quedan $tu_daño de vida";
+$consulta5="SELECT * FROM escena where ID=10";
+    $resultado = mysql_query($consulta5);
+    while ($fila = mysql_fetch_assoc($resultado)) {
+    echo $fila["descripcion"];
+    echo '<img src="'.$fila["imagen"].'">';
+   }
+
+
     ?>
     
         </div>
