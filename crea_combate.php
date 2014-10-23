@@ -27,7 +27,7 @@ echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos 
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
-                                                }
+                                                 }
                          ?>
                        <?php
     $consulta2="SELECT * FROM actores where nombre='mujer_punk'";
