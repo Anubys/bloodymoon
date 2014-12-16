@@ -13,8 +13,8 @@
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
-      <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
-      <li><a href="logout.php" data-icon="star">Logout</a></li>
+      <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
+      <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
 </div> 
     </div>

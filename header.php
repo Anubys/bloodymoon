@@ -21,7 +21,7 @@ echo "Logeado";
      <form data-ajax="false" method="post" action="login.php" >
      <b> Usuario</b>  <INPUT TYPE="text" NAME="nomusuario" size="10"><br />
      <b> Password</b> <INPUT TYPE="password" NAME="password" size="10"><br />
-      <INPUT TYPE="submit" name="login" value="login"/>
+      <INPUT TYPE="submit" name="login" value="Iniciar Sesion"/>
      </form>
               <?php
    }

@@ -12,8 +12,8 @@
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
-      <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
-      <li><a href="logout.php" data-icon="star">Logout</a></li>
+      <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
+      <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
 </div> 
     </div>
@@ -30,10 +30,10 @@ if(!isset($_SESSION['uid'])){
 	<table border=0><tr><td align="center">
 <map name="mapa1">
 <area alt="Circle Pig" shape="CIRCLE" coords="172,59,8" href="#bareto.php">
+<area alt="Parque" shape="CIRCLE" coords="264,596,8" href="#parque.php">    
 </map>
-<img src="mapa.jpg" alt="Mapa de imágenes. Pulsa en cada una de los círculos." border="0" usemap="#mapa1">
+<img src="mapa.jpg" alt="Mapa de imágenes." border="0" usemap="#mapa1">
 <br>
-Pulsa en los círculos para acceder a las secciones!
 </td></tr></table> 
         
        </div>

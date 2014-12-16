@@ -32,13 +32,17 @@ if(!isset($_SESSION['uid'])){
 		
 		        <td>FUE:<i><?php echo $usuario['FUE']; ?></i></td>
 			<td>AGI:<i><?php echo $usuario['AGI']; ?></i></td>
+			</tr>			
 			<td>INT:<i><?php echo $usuario['INT']; ?></i></td>
 			<td>CAR:<i><?php echo $usuario['CAR']; ?></i></td>
-			<td>REST:<i><?php echo $usuario['RES']; ?></i></td>
+			<td>REST:<i><?php echo $usuario['RES'];?></i></td>
 			</tr>
 		 <td>Reserva de Sangre:</td>
-	<td><i><?php echo $usuario['sangre_rabia']; ?></i></td
-		      
+	<td><i><?php echo $usuario['sangre_rabia']; ?></i></td>
+	</tr>
+		 <td>Vida:</td>
+        <td><i><?php echo $usuario['vida_total']; ?></i></td>
+			      
         </tr>
     </tbody>
     </table>

@@ -13,7 +13,7 @@
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
-      <li><a href="logout.php" data-icon="star">Logout</a></li>
+      <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
 </div> 
     </div>

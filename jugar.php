@@ -13,7 +13,7 @@
 	<div data-role="navbar">
    <ul>
       <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>      
-      <li><a href="logout.php" data-icon="star">Logout</a></li>
+      <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
 </div> 
     </div>
@@ -27,7 +27,7 @@ if(!isset($_SESSION['uid'])){
     ?>
     <div data-role="content">
     <!--<center><h2>Personaje</h2></center>-->
-    <table data-role="table" class="ui-responsive">
+    <!--<table data-role="table" class="ui-responsive">
 	<tr>
 		    <tbody>
     <td>Sangre: <i><?php echo $usuario['sangre_rabia']; ?></i></td
@@ -35,7 +35,7 @@ if(!isset($_SESSION['uid'])){
         </tr>
     </tbody>
     </table>
-        <br />
+        <br />-->
 	<?php
     $consulta="SELECT * FROM escena where nombre='palacio'";
     $resultado = mysql_query($consulta);
