@@ -36,7 +36,7 @@ if(isset($_POST['registro'])){
         }elseif(mysql_num_rows($register2) > 0){
             echo "Este e-mail ya esta en uso!";
         }else{
-                        $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`,`raza`,`FUE`,`AGI`,`IN`,`CAR`,`RES`,`sangre_rabia`) VALUES ('$nomusuario','".md5($password)."','$email','$raza','5','5','5','5','5','10')") or die(mysql_error());
+                        $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`email`,`raza`,`FUE`,`AGI`,`INT`,`CAR`,`RES`,`sangre_rabia`,`vida`,`vida_total`) VALUES ('$nomusuario','".md5($password)."','$email','$raza','5','5','5','5','5','10','35','35')") or die(mysql_error());
                          if($raza=="Vampiro"){
                             
             echo "Has elegido vampiro";
@@ -56,8 +56,8 @@ E-mail: <input type="text" name="email"/><br />
  <label>Raza:</label>
 <select name="raza">
 <option value="Vampiro">Vampiro</option>
-<option value="Hombre Lobo">Hombre Lobo</option>
-<option value="Humano">Humano</option>
+<!--<option value="Hombre Lobo">Hombre Lobo</option>
+<option value="Humano">Humano</option>-->
 </select>
 <input type="submit" name="registro" value="Registro"/>
 </form>
