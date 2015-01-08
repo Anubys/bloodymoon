@@ -46,7 +46,7 @@ echo "Los gorilas, te agarran por el brazo y te paran justo al entrar, ¿A donde 
 ?>
 <br>
 <a href="salida.php" data-role="button" data-mini="true">Sera mejor salir de aqui</a>
-<a href="combate.php" data-role="button" data-mini="true">A mi nadie me toca</a>
+<a href="combate_parque.php" data-role="button" data-mini="true">A mi nadie me toca</a>
        </body>
     </div>
   <?php
