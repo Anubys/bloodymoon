@@ -51,7 +51,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='mujer_punk
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
-header ("Location: muerte_bareto.php");
+header ("Location: muerte_contrincante.php");
 }
 } elseif ($menu=="2") {
 echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
@@ -65,7 +65,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='mujer_punk
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
-header ("Location: muerte_bareto.php");
+header ("Location: muerte_contrincante.php");
 }
 }  elseif ($menu=="3") {
 	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
@@ -79,7 +79,7 @@ $muestravida=$row['vida'];
 echo "le queda $daño de vida";
 if ($muestravida <=0) {
 echo "Esta muerta";
-header ("Location: muerte_bareto.php");
+header ("Location: muerte_contrincante.php");
 }
        	}
 	else {
