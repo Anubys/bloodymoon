@@ -44,6 +44,7 @@ if(isset($_POST['registro'])){
             }
             
             echo "Registro completo!";
+	    echo "<script> document.location.href='index.php';</script>";
         }
     }
 }
