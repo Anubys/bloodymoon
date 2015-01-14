@@ -47,7 +47,7 @@ if(!isset($_SESSION['uid'])){
     </tbody>
     </table>
 	</div>
-	Puedes recuperar tu vida gastando puntos de reserva de sangre , pero nunca por encima de la reserva de sangre.
+	Cuando tu vida este por debajo de tu reserva de sangre, puedes gastar sangre para recuperar vida.
 	<form <form data-ajax="false" method="post" action="actualiza_vida.php">
 	<label for="slider-0">Vida:</label>
    <input type="range" name="slider" id="slider-0" value=<?php echo $usuario['vida_total']; ?> min=<?php echo $usuario['vida_total']; ?> max=<?php echo $usuario['sangre_rabia']; ?>  />
