@@ -29,8 +29,8 @@ if(!isset($_SESSION['uid'])){
 	
 	<table border=0><tr><td align="center">
 <map name="mapa1">
-<area alt="Circle Pig" shape="CIRCLE" coords="175,68,8" href="#bareto.php">
-<area alt="Parque" shape="CIRCLE" coords="270,592,8" href="#parque.php">
+<area alt="Circle Pig" shape="CIRCLE" coords="171,76,8" href="#bareto.php">
+<area alt="Parque" shape="CIRCLE" coords="259,616,8" href="#parque.php">
 <area alt="Museo" shape="CIRCLE" coords="103,520,8" href="#museo.php">     
 </map>
 <img src="mapa.jpg" alt="Mapa de imágenes." border="0" usemap="#mapa1">
