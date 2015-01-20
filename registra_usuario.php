@@ -8,7 +8,7 @@ $query = "insert into `usuarios` (`validado`,`nombre_usuario`,`clave_usuario`,`e
 ('$validado','$nombre_usuario','$clave_usuario','$email')";
 $result = mysql_query($query)
 or die("'Lo mas probable es que el usuario ya existe o a habido un error'");
-header("location:index.php");
+ echo "<script> document.location.href='index.php';</script>";
 ?>
        
        
