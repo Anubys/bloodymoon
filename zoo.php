@@ -30,7 +30,7 @@ if(!isset($_SESSION['uid'])){
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
-    $consulta2="SELECT * FROM escena where ID=14";
+    $consulta2="SELECT * FROM escena where ID=18";
     $resultado = mysql_query($consulta2);
     while ($fila = mysql_fetch_assoc($resultado)) {
     echo $fila["descripcion"];
@@ -42,12 +42,12 @@ mysql_free_result($resultado);
 ?>
 <br>
 <?php
-echo "De repente te fijas en una lugubre habitacion en la esquina de la escalera avanzas lentamente hacia la entrada y vislumbras lo que parece una sombra humana en una de las ventanas, avanzas lentamente, pero la  sombra parece haberte escuchado y se arroja rapidamente por la ventana.
+echo "Uno de ellos parece hacer algun tipo de gesto al otro para que se aparte, encarandose directamente  hacia ti..
 ";
 ?>
 <br>
-<a href="zoo.php" data-role="button" data-mini="true">Saltas por la ventana</a>
-<a href="conversar_fiesta.php" data-role="button" data-mini="true">Te quedas en la fiesta</a>
+<a href="combate_zoo.php" data-role="button" data-mini="true">Te enfrentas a ellos</a>
+<a href="salida.php" data-role="button" data-mini="true">Sales Huyendo</a>
        </body>
     </div>
   <?php

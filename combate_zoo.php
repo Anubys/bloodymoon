@@ -1,6 +1,6 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
@@ -19,7 +19,6 @@
 </div> 
     </div>
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
 session_start();
 include("conexion.php");
 include("sentencias.php");
@@ -30,7 +29,7 @@ if(!isset($_SESSION['uid'])){
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
-    $consulta2="SELECT * FROM escena where ID=14";
+    $consulta2="SELECT * FROM escena where ID=8";
     $resultado = mysql_query($consulta2);
     while ($fila = mysql_fetch_assoc($resultado)) {
     echo $fila["descripcion"];
@@ -40,20 +39,21 @@ if(!isset($_SESSION['uid'])){
 mysql_free_result($resultado);
 
 ?>
+<form data-ajax="false" method="POST" action="crea_combate_zoo.php" >
+<select name="menu">
+<option value="1">Mordisco</option>
+<option value="2">Garra</option>
+<option value="3">Puñetazo</option>
+</select>
+<div><input type="submit" value="Ataca"/>
+ </form>
+</div>
 <br>
-<?php
-echo "De repente te fijas en una lugubre habitacion en la esquina de la escalera avanzas lentamente hacia la entrada y vislumbras lo que parece una sombra humana en una de las ventanas, avanzas lentamente, pero la  sombra parece haberte escuchado y se arroja rapidamente por la ventana.
-";
-?>
-<br>
-<a href="zoo.php" data-role="button" data-mini="true">Saltas por la ventana</a>
-<a href="conversar_fiesta.php" data-role="button" data-mini="true">Te quedas en la fiesta</a>
-       </body>
-    </div>
   <?php
 }
 //include("footer.php");
 ?>
-    </div>
+
+    
 
     
