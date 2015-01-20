@@ -1,12 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
-<head><title>BloodyMoon B01</title> 
-<meta content="text/html; charset=UTF-8"  http-equiv="content-type">
-<meta name="keywords" content="mitos,leyendas,enigmas,fantasmas,ovnis,alienigenas,criaturas fantasticas">
-<meta name="keywords" content="sociedades oscuras, misterios, espiritismo,magia,historia">
-<meta name="keywords" content="lugares fantasticos,leyendas,ocultismo,terror,miedo">
-<link rel="stylesheet" type="text/css" href="estilo.css">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>BloodyMoon B01</title> 
 </link>
 </meta>
 </head>

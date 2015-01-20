@@ -1,7 +1,7 @@
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
- <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
@@ -51,7 +51,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='mujer_punk
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
-header ("Location: muerte_contrincante.php");
+ echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
 } elseif ($menu=="2") {
 echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
@@ -65,7 +65,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='mujer_punk
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
-header ("Location: muerte_contrincante.php");
+ echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
 }  elseif ($menu=="3") {
 	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
@@ -79,7 +79,7 @@ $muestravida=$row['vida'];
 echo "le queda $daño de vida";
 if ($muestravida <=0) {
 echo "Esta muerta";
-header ("Location: muerte_contrincante.php");
+ echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
        	}
 	else {
@@ -109,7 +109,7 @@ $upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daño' where`nomusuario
 echo "Te quedan $tu_daño de vida";
 if ($tuvida <=0) {
 echo "Tu personaje esta muerto";
-header ("Location: muerte_personaje.php");
+ echo "<script> document.location.href='muerte_personaje.php';</script>";
 }
 $consulta5="SELECT * FROM escena where ID=10";
     $resultado = mysql_query($consulta5);
