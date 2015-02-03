@@ -46,7 +46,7 @@ echo "Maldicion, alguien viene, seguro que el principe, tiene a mas personas bus
 ?>
 <br>
 <a href="combate.php" data-role="button" data-mini="true">Te vienes a ver al principe</a>
-<a href="conversar_fiesta.php" data-role="button" data-mini="true">Salgamos de aqui pitando</a>
+<a href="refugio.php" data-role="button" data-mini="true">Salgamos de aqui pitando</a>
        </body>
     </div>
   <?php
