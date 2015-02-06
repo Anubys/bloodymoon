@@ -18,13 +18,24 @@
    </ul>
 </div> 
     </div>
+    
     <?php
 session_start();
 include("conexion.php");
 include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
+    }else{
+   $consulta5="SELECT visitada FROM escena where ID=5";
+    $consultavisita = mysql_query($consulta5);
+       while($row = mysql_fetch_assoc($consultavisita)){
+$visita=$row['visitada'];
+       }
+if ($visita ==1){
+ echo "Ya has visitado este lugar";
+  echo "<script> document.location.href='mapa.php';</script>";
+       }
+     
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
