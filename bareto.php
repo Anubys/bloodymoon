@@ -26,6 +26,9 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
+		$loc="bareto";
+$user_login=$usuario['nomusuario'];
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
    $consulta5="SELECT visitada FROM escena where ID=5";
     $consultavisita = mysql_query($consulta5);
        while($row = mysql_fetch_assoc($consultavisita)){
@@ -65,7 +68,7 @@ echo "Un camarero, alto y bien formado se acerca hacia ti, dedicandote una magni
    mysql_free_result($resultado2);
    ?>
 <a href="interior.php" data-role="button" data-mini="true">Si,gracias</a>
-<a href="index.html" data-role="button" data-mini="true">No,solo voy a echar un vistazo</a>
+<a href="interior.php" data-role="button" data-mini="true">No,solo voy a echar un vistazo</a>
        </body>
     </div>
   <?php

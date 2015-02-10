@@ -16,7 +16,7 @@ if(isset($_POST['login'])){
     if(isset($_SESSION['uid'])){
         echo "ya estas logeao!";
     }else{
-        $nomusuario = ($_POST['nomusuario']);
+		        $nomusuario = ($_POST['nomusuario']);
         $password = ($_POST['password']);
         
         $login_check = mysql_query("SELECT `id` FROM `usuario` WHERE `nomusuario`='$nomusuario' AND `password`='".md5($password)."'") or die(mysql_error());
@@ -25,12 +25,38 @@ if(isset($_POST['login'])){
         }else{
             $get_id = mysql_fetch_assoc($login_check);
             $_SESSION['uid'] = $get_id['id'];
-             echo "<script> document.location.href='jugar.php';</script>";
+    $consulta="SELECT ultima_loc FROM usuario where nomusuario='$nomusuario'";
+    $consultaloc = mysql_query($consulta);
+       while($row = mysql_fetch_assoc($consultaloc)){
+$localizacion=$row['ultima_loc'];
+}
+switch($localizacion) {
+	case "palacio":
+        echo "<script> document.location.href='palacio.php';</script>";
+        break;
+		case "salon":
+        echo "<script> document.location.href='salon.php';</script>";
+        break;
+		case "bareto":
+        echo "<script> document.location.href='bareto.php';</script>";
+        break;
+		case "interior":
+        echo "<script> document.location.href='interior.php';</script>";
+        break;
+		case "parque":
+        echo "<script> document.location.href='parque.php';</script>";
+        break;
+   default:
+       echo "<script> document.location.href='jugar.php';</script>";
+}
+			 
         }
     }
 }else{
     echo "No tienes acceso para ver esta pagina!";
 }
+
+
 
 
 
