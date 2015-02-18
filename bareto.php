@@ -68,7 +68,7 @@ echo "Un camarero, alto y bien formado se acerca hacia ti, dedicandote una magni
    mysql_free_result($resultado2);
    ?>
 <a href="interior.php" data-role="button" data-mini="true">Si,gracias</a>
-<a href="interior.php" data-role="button" data-mini="true">No,solo voy a echar un vistazo</a>
+<a href="mapa.php" data-role="button" data-mini="true">No,me largo</a>
        </body>
     </div>
   <?php
