@@ -24,6 +24,8 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+	$user_login=$usuario['nomusuario'];
+$upda=mysql_query("UPDATE `usuario` SET `existe_libro`='1' where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -51,7 +53,7 @@ echo "¿Esta interesado en la exposicion?";
    }
    mysql_free_result($resultado2);
    ?>
-   <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
+      <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php

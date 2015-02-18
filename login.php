@@ -46,6 +46,9 @@ switch($localizacion) {
 		case "parque":
         echo "<script> document.location.href='parque.php';</script>";
         break;
+		case "libreria_a":
+        echo "<script> document.location.href='libreria_abierta.php';</script>";
+        break;
    default:
        echo "<script> document.location.href='jugar.php';</script>";
 }
