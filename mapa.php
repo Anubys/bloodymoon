@@ -33,7 +33,8 @@ if(!isset($_SESSION['uid'])){
 <area alt="Circle Pig" shape="CIRCLE" coords="140,47,60" href="#bareto.php">
 <area alt="Parque" shape="CIRCLE" coords="218,578,80" href="#parque.php">
 <area alt="Museo" shape="CIRCLE" coords="81,494,60" href="#museo.php"> 
-<area alt="libreria" shape="CIRCLE" coords="189,345,64"href="#libreria.php">  
+<area alt="libreria" shape="CIRCLE" coords="189,345,64"href="#libreria.php">
+<area alt="universidad" shape="CIRCLE" coords="150,147,90"href="#universidad.php">   
 </map>
 <img src="mapa.jpg" alt="Mapa de imágenes." border="0" usemap="#mapa1">
 <br>
