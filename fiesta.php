@@ -26,6 +26,9 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+	$loc="fiesta";
+$user_login=$usuario['nomusuario'];
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error())
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->

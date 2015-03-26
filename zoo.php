@@ -26,6 +26,8 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+	case "zoo":
+        echo "<script> document.location.href='universidad.php';</script>";
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->

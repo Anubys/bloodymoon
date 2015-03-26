@@ -120,7 +120,7 @@ $consulta5="SELECT * FROM escena where ID=10";
    }
 
     ?>
-    <form data-ajax="false" method="POST" action="crea_combate_parque.php" >
+    <form data-ajax="false" method="POST" action="crea_combate_universidad.php" >
 <select name="menu">
 <option value="1">Cuchillo</option>
 <option value="2">Garra</option>

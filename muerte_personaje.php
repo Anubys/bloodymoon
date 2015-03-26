@@ -12,10 +12,7 @@
         <h2>BloodyMoon</h2>
 	<div data-role="navbar">
    <ul>
-      <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
-      <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
-      <li><a href="logout.php" data-icon="star">Logout</a></li>
-   </ul>
+                </ul>
 </div> 
     </div>
     <?php
@@ -38,7 +35,7 @@ if(!isset($_SESSION['uid'])){
 mysql_free_result($resultado);
 
  ?>
-   <a href="logout.php" data-role="button" data-theme="a">Continuar</a>
+   <a href="logout.php" data-role="button" data-theme="a">Salir</a>
   </body>
     </div>
   <?php

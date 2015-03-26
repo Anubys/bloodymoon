@@ -51,6 +51,10 @@ switch($localizacion) {
         break;
 		case "uni":
         echo "<script> document.location.href='universidad.php';</script>";
+		case "fiesta":
+        echo "<script> document.location.href='fiesta.php';</script>";
+		case "zoo":
+        echo "<script> document.location.href='fiesta.php';</script>";
         break;
    default:
        echo "<script> document.location.href='jugar.php';</script>";

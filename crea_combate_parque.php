@@ -65,7 +65,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='gorila'")o
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_bareto.php';</script>";
+ echo "<script> document.location.href='muerte_contrincante_parque.php.php';</script>";
 }
 }  elseif ($menu=="3") {
 	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
@@ -79,7 +79,7 @@ $muestravida=$row['vida'];
 echo "le queda $daño de vida";
 if ($muestravida <=0) {
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_bareto.php';</script>";
+ echo "<script> document.location.href='muerte_contrincante_parque.php';</script>";
 }
        	}
 	else {

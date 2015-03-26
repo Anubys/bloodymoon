@@ -44,7 +44,7 @@ mysql_free_result($resultado);
 echo "Es hora de elejir otra localizacion";
 ?>
 <br>
-
+<a href="mapa.php" data-role="button" data-mini="true">Mapa</a>
        </body>
     </div>
   <?php

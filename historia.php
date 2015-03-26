@@ -32,15 +32,15 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
     <!--<center><h2>Texto</h2></center>-->
     <br>
 <?php
-echo"Gracias, muchas gracias por ayudarme,querian llevarme ante el principe, para algo de un ritual, pero no se a que se refieren.";
+echo"Gracias, muchas gracias por ayudarme,querian llevarme ante el principe, para algo de un ritual, pero no se a que se refieren, gracias por todo";
+echo "El joven desaparece de tu vista, mucho antes de que puedas darte cuenta de ello";
+
 
     $consulta3="SELECT * FROM actores where nombre='eric'";
     $resultado2 = mysql_query($consulta3);
     while ($fila = mysql_fetch_assoc($resultado2)) {
     echo '<img src="'.$fila["imagen"].'">';
-	echo $fila["charla"];
-	
-       
+	       
    }
    mysql_free_result($resultado2);
    ?>

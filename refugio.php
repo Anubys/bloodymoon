@@ -50,8 +50,7 @@ mysql_free_result($resultado);
    }
    mysql_free_result($resultado2);
    ?>
-<a href="c.php" data-role="button" data-mini="true">Tienes el libro</a>
-<a href="r.php" data-role="button" data-mini="true">No lo tienes</a>
+<a href="historia_final.php" data-role="button" data-mini="true">Libro</a>
        </body>
     </div>
   <?php
