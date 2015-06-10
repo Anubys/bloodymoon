@@ -2,6 +2,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" type="text/css" href="estilo.css" >
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
@@ -51,7 +52,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='eric'")or 
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
+ echo "<script> document.location.href='huida_museo.php';</script>";
 }
 } elseif ($menu=="2") {
 echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
@@ -65,7 +66,7 @@ $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='eric'")or 
 echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
+ echo "<script> document.location.href='huida_museo.php';</script>";
 }
 }  elseif ($menu=="3") {
 	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
@@ -79,7 +80,7 @@ $muestravida=$row['vida'];
 echo "le queda $daño de vida";
 if ($muestravida <=0) {
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
+ echo "<script> document.location.href='huida_museo.php';</script>";
 }
        	}
 	else {
