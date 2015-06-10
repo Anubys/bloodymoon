@@ -9,7 +9,7 @@
 <body>
     <div data-role="page">
     <div data-role="header">
-        <h2>Cabecera</h2>
+        <h2>BloodyMoon</h2>
     </div>
     <?php
 session_start();
