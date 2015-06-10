@@ -1,27 +1,8 @@
-body {
-    background-color:grey;
-    }
-    #header {
-         width: 720px;
-        height: 150px;
-        background-image: url("bloodymoon.jpg");
-        background-repeat:no-repeat;
-        color:#000000;  
-        font-size:18pt;
-        border:1px solid #0000000;
-            }
-            #navegacion_div {
-            float:right;
-            background-color: white;
-            border:1px solid red;
-            }
-                #footer {
-                    background-color:#898989;
-                    color:#ffffff;
-                    font-size: 12pt;
-                    border:1px solid #000000;
-                    bottom : 0;
-                    margin-top : 140px;
-                                        
-                }
+[data-role="content"] {
+    font-size:small;font-style:normal;color:red;text-shadow: none; 
     
+      
+}
+.ui-page .ui-content {
+    background:black;
+}
