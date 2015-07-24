@@ -2,6 +2,7 @@
 <head>
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" type="text/css" href="estilo.css" >
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
@@ -47,13 +48,14 @@ if(!isset($_SESSION['uid'])){
         </tr>
     </tbody>
     </table>
-	</div>
-	Cuando tu vida este por debajo de tu reserva de sangre, puedes gastar sangre para recuperar vida.
+		Cuando tu vida este por debajo de tu reserva de sangre, puedes gastar sangre para recuperar vida.
+		
 	<form <form data-ajax="false" method="post" action="actualiza_vida.php">
 	<label for="slider-0">Vida:</label>
    <input type="range" name="slider" id="slider-0" value=<?php echo $usuario['vida_total']; ?> min=<?php echo $usuario['vida_total']; ?> max=<?php echo $usuario['sangre_rabia']; ?>  />
 	<input type="submit" data-inline="false" value="Actualiza">
 	</form>
+	</div>
 	<?php
 }
 include("footer.php");
