@@ -6,3 +6,5 @@
 .ui-page .ui-content {
     background:black;
 }
+[data-role="table"] {
+    font-size:small;font-style:normal;color:red;text-shadow: none;
