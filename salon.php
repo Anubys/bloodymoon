@@ -25,8 +25,18 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+	$user_login=$usuario['nomusuario'];
 	$loc="salon";
-$user_login=$usuario['nomusuario'];
+	$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+    $consultavisita = mysql_query($consulta_visita);
+       while($row = mysql_fetch_assoc($consultavisita)){
+$visita=$row['visitada'];
+       }
+if ($visita ==1){
+ echo "Ya has visitado este lugar";
+  //echo "<script> document.location.href='mapa.php';</script>";
+       }
+else
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
     <div data-role="content">
@@ -54,6 +64,9 @@ echo "Hola  {$usuario['nomusuario']} acercate te estabamos esperando";
        
    }
    mysql_free_result($resultado2);
+
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
    ?>
    <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
   </body>
