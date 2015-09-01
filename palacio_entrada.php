@@ -25,31 +25,12 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
-	$libro=$usuario['existe_libro'];
-	$eric=$usuario['historia_eric'];
-	$user_login=$usuario['nomusuario'];
-	$loc="palacio";
-		if(($libro==1) && ($eric==1)){
-	echo "<script> document.location.href='palacio_entrada.php';</script>";
-}
-elseif (($libro==0) && ($eric==0)) {
-	echo "<script> document.location.href='palacio_noentrar.php';</script>";
-}	
-
-    ?>
+		$user_login=$usuario['nomusuario'];
+	    $loc="palacio_entrada";
+	    ?>
     <div data-role="content">
-    <!--<center><h2>Personaje</h2></center>-->
-    <!--<table data-role="table" class="ui-responsive">
-	<tr>
-		    <tbody>
-    <td>Sangre: <i><?php echo $usuario['sangre_rabia']; ?></i></td
-		      
-        </tr>
-    </tbody>
-    </table>
-        <br />-->
-	<?php
-    $consulta="SELECT * FROM escena where nombre='palacio'";
+    	<?php
+    $consulta="SELECT * FROM escena where nombre='palacio_entrada'";
     $resultado = mysql_query($consulta);
     while ($fila = mysql_fetch_assoc($resultado)) {
     echo $fila["descripcion"];
@@ -59,14 +40,14 @@ elseif (($libro==0) && ($eric==0)) {
 mysql_free_result($resultado);
 
 
-//$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
 
 
 ?>
    
 
     
-    <a href="salon.php" data-role="button" data-theme="a">Continuar</a>
+    <a href="catacumbas.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php
