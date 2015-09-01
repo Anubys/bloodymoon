@@ -27,6 +27,8 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+		$user_login=$usuario['nomusuario'];
+		$upda=mysql_query("UPDATE `usuario` SET `historia_eric`='1' where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -42,7 +44,7 @@ mysql_free_result($resultado);
 
 ?>
 <br>
-<a href="historia_final.php" data-role="button" data-mini="true">Continuar</a>
+<a href="palacio.php" data-role="button" data-mini="true">Continuar</a>
        </body>
     </div>
   <?php

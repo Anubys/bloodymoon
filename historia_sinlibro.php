@@ -27,7 +27,9 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
-    ?>
+		$user_login=$usuario['nomusuario'];
+		$upda=mysql_query("UPDATE `usuario` SET `tiene_eric`='1' where`nomusuario`='$user_login'")or die(mysql_error());
+	    ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
@@ -39,10 +41,9 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
-
 ?>
 <br>
-<a href="Palacio_final.php" data-role="button" data-mini="true">A Palacio</a>
+<a href="Palacio.php" data-role="button" data-mini="true">A Palacio</a>
        </body>
     </div>
   <?php

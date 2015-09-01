@@ -25,14 +25,21 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
-	$libro=$usuario['existe_libro'];
+	$libro=$usuario['tiene_libro'];
 	$eric=$usuario['historia_eric'];
+	$existe_eric=$usuario['tiene_eric'];
 	$user_login=$usuario['nomusuario'];
 	$loc="palacio";
 		if(($libro==1) && ($eric==1)){
 	echo "<script> document.location.href='palacio_entrada.php';</script>";
 }
 elseif (($libro==0) && ($eric==0)) {
+	echo "<script> document.location.href='palacio_noentrar.php';</script>";
+}
+elseif (($libro==0) && ($existe_eric==1)) {
+	echo "<script> document.location.href='entrega_eric.php';</script>";
+}
+else{
 	echo "<script> document.location.href='palacio_noentrar.php';</script>";
 }	
 

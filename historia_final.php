@@ -1,9 +1,9 @@
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" href="estilo.css" >
- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
 	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
 </head>
@@ -19,26 +19,26 @@
    </ul>
 </div> 
     </div>
+    
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
 session_start();
 include("conexion.php");
 include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
-$libro=$usuario['existe_libro'];
+    }else{
+		$libro=$usuario['tiene_libro'];
 if($libro==1){
 	echo "<script> document.location.href='historia_libro.php';</script>";
 }
 elseif ($libro==0) {
 	echo "<script> document.location.href='historia_sinlibro.php';</script>";
 }
-    ?>
+			    ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
-    $consulta2="SELECT * FROM escena where ID=23";
+    $consulta2="SELECT * FROM escena where ID=24";
     $resultado = mysql_query($consulta2);
     while ($fila = mysql_fetch_assoc($resultado)) {
     echo $fila["descripcion"];
@@ -46,11 +46,14 @@ elseif ($libro==0) {
    }
 
 mysql_free_result($resultado);
-
 ?>
 <br>
 <?php
-    $consulta3="SELECT * FROM actores where nombre='eric'";
+echo "Un camarero, alto y bien formado se acerca hacia ti, dedicandote una magnifica sonrisa";
+?>
+<br>
+<?php
+    $consulta3="SELECT * FROM actores where nombre='camarero'";
     $resultado2 = mysql_query($consulta3);
     while ($fila = mysql_fetch_assoc($resultado2)) {
     echo $fila["charla"];
@@ -58,7 +61,8 @@ mysql_free_result($resultado);
    }
    mysql_free_result($resultado2);
    ?>
-<a href="historia_final.php" data-role="button" data-mini="true">Continuar</a>
+<a href="interior.php" data-role="button" data-mini="true">Si,gracias</a>
+<a href="interior.php" data-role="button" data-mini="true">No,solo voy a echar un vistazo</a>
        </body>
     </div>
   <?php
@@ -66,5 +70,7 @@ mysql_free_result($resultado);
 //include("footer.php");
 ?>
     </div>
+
+    
 
     

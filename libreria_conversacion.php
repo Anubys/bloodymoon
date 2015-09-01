@@ -30,6 +30,8 @@ if(!isset($_SESSION['uid'])){
 		$loc="libreria_c";
 $user_login=$usuario['nomusuario'];
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$upda=mysql_query("UPDATE `usuario` SET `tiene_libro`='1' where`nomusuario`='$user_login'")or die(mysql_error());
+
 					    ?>
     <div data-role="content">
     

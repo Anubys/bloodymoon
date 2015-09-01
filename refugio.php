@@ -51,7 +51,7 @@ mysql_free_result($resultado);
    }
    mysql_free_result($resultado2);
    ?>
-<a href="historia_final.php" data-role="button" data-mini="true">Libro</a>
+<a href="historia_final.php" data-role="button" data-mini="true">Contiuar</a>
        </body>
     </div>
   <?php
