@@ -43,7 +43,7 @@ mysql_free_result($resultado);
 ?>
 <br>
 <br>
-<a href="palacio.php" data-role="button" data-mini="true">Al Palacio</a>
+<a href="palacio_presentacion.php" data-role="button" data-mini="true">Al Palacio</a>
        </body>
     </div>
   <?php
