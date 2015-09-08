@@ -30,6 +30,17 @@ if(!isset($_SESSION['uid'])){
 }else{
 	$loc="museo";
 $user_login=$usuario['nomusuario'];
+$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+    $consultavisita = mysql_query($consulta_visita);
+       while($row = mysql_fetch_assoc($consultavisita)){
+$visita=$row['visitada'];
+       }
+	   if ($visita ==1){
+ echo "Ya has visitado este lugar";
+ echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
+ 
+        }
+		else {
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error())
     ?>
     <div data-role="content">
@@ -43,6 +54,8 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
    }
 
 mysql_free_result($resultado);
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
 
 ?>
 <br>
@@ -55,6 +68,7 @@ echo "Un momento parece que se ha percatado de tu presencia ¿como es posible? C
        </body>
     </div>
   <?php
+}
 }
 //include("footer.php");
 ?>
