@@ -23,6 +23,7 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
+		$user_login=$usuario['nomusuario'];
     ?>
     <div data-role="content">
 	<?php
@@ -34,6 +35,8 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
+
+$borrar=mysql_query("DELETE `usuario` FROM `usuario` where`nomusuario`='$user_login'")or die(mysql_error());	
 
  ?>
    <a href="logout.php" data-role="button" data-theme="a">Salir</a>
