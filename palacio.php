@@ -25,6 +25,7 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
+	$inicio=0;
 	$libro=$usuario['tiene_libro'];
 	$eric=$usuario['historia_eric'];
 	$existe_eric=$usuario['tiene_eric'];
@@ -39,9 +40,8 @@ elseif (($libro==0) && ($eric==0)) {
 elseif (($libro==0) && ($existe_eric==1)) {
 	echo "<script> document.location.href='entrega_eric.php';</script>";
 }
-else{
-	echo "<script> document.location.href='palacio_noentrar.php';</script>";
-}	
+elseif (($inicio==0)) {
+	echo "<script> document.location.href='inicio.php';</script>";
 
     ?>
     <div data-role="content">
@@ -68,7 +68,7 @@ mysql_free_result($resultado);
 
 //$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
 
-
+}
 ?>
    
 
