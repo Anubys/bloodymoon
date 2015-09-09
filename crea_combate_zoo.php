@@ -49,7 +49,7 @@ $muestravida=$row['vida'];
 }
   $daño=$muestravida-$ataque1;
 $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='lobo'")or die(mysql_error());
-echo "le queda $daño de vida";
+//echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
  echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
@@ -63,7 +63,7 @@ $muestravida=$row['vida'];
        }
 $daño=$muestravida-$ataque2;
 $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='lobo'")or die(mysql_error());
-echo "le queda $daño de vida";
+//echo "le queda $daño de vida";
 if ($muestravida <=0){
 echo "Esta muerta";
  echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
@@ -77,7 +77,7 @@ $muestravida=$row['vida'];
        }
        $daño=$muestravida-$ataque3;
        $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='lobo'")or die(mysql_error());
-echo "le queda $daño de vida";
+//echo "le queda $daño de vida";
 if ($muestravida <=0) {
 echo "Esta muerta";
  echo "<script> document.location.href='muerte_contrincante_zoo.php';</script>";
