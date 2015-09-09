@@ -27,7 +27,7 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
-		$loc="libreria_a";
+		$loc="libreria";
 $user_login=$usuario['nomusuario'];
 $consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
     $consultavisita = mysql_query($consulta_visita);
