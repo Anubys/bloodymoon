@@ -20,21 +20,32 @@
 </div> 
     </div>
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
 session_start();
 include("conexion.php");
 include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
-	$loc="uni";
-$user_login=$usuario['nomusuario'];
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error())
+	$user_login=$usuario['nomusuario'];
+	$loc="universidad";
+	$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+    $consultavisita = mysql_query($consulta_visita);
+       while($row = mysql_fetch_assoc($consultavisita)){
+$visita=$row['visitada'];
+       }
+if ($visita ==1){
+ echo "Ya has visitado este lugar";
+ echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
+ 
+        }
+	
+	else {
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
-    $consulta2="SELECT * FROM escena where ID=26";
+    $consulta2="SELECT * FROM escena where nombre='universidad'";
     $resultado = mysql_query($consulta2);
     while ($fila = mysql_fetch_assoc($resultado)) {
     echo $fila["descripcion"];
@@ -42,7 +53,8 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
    }
 
 mysql_free_result($resultado);
-
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
 ?>
 <br>
 <?php
@@ -57,6 +69,7 @@ echo "Durante unos segundos se pasa por tu cabeza la idea de coger el cuchillo y
        </body>
     </div>
   <?php
+}
 }
 //include("footer.php");
 ?>
