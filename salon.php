@@ -34,9 +34,9 @@ $visita=$row['visitada'];
        }
 if ($visita ==1){
  echo "Ya has visitado este lugar";
-  //echo "<script> document.location.href='mapa.php';</script>";
-       }
-else
+ echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
+         }
+		else {
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
     <div data-role="content">
@@ -50,7 +50,8 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
    }
 
 mysql_free_result($resultado);
-
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
 ?>
 <br>
 <?php
@@ -65,13 +66,12 @@ echo "Hola  {$usuario['nomusuario']} acercate te estabamos esperando";
    }
    mysql_free_result($resultado2);
 
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
-$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
    ?>
    <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php
+}
 }
 //include("footer.php");
 ?>
