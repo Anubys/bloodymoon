@@ -34,7 +34,8 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
     <br>
 <?php
 echo"Gracias, muchas gracias por ayudarme,querian llevarme ante el principe, para algo de un ritual, pero no se a que se refieren, gracias por todo";
-echo "El joven desaparece de tu vista, mucho antes de que puedas darte cuenta de ello";
+echo '</br>';
+echo "No tardaran en vernir a por mi, si quieres podemos ir a un lugar seguro";
 
 
     $consulta3="SELECT * FROM actores where nombre='eric'";
@@ -45,7 +46,7 @@ echo "El joven desaparece de tu vista, mucho antes de que puedas darte cuenta de
    }
    mysql_free_result($resultado2);
    ?>
-      <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
+      <a href="refugio.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php

@@ -34,7 +34,7 @@ if(!isset($_SESSION['uid'])){
 		if(($libro==1) && ($existe_eric==1) && ($eric==1) && ($existe_libro==1)){
 	echo "<script> document.location.href='palacio_entrada.php';</script>";
 }
-if (($libro==0) && ($eric==0) && ($existe_eric==0)) {
+if (($libro==0) && ($eric==0) && ($existe_eric==0) && ($existe_libro==0)) {
 	echo "<script> document.location.href='palacio_noentrar.php';</script>";
 }
 if (($libro==0) && ($existe_eric==1)) {
