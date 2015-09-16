@@ -43,7 +43,7 @@ mysql_free_result($resultado);
 ?>
 <br>
 <br>
-<a href="Salir.php" data-role="button" data-mini="true">Fin</a>
+<a href="salida.php" data-role="button" data-mini="true">Fin</a>
 
        </body>
     </div>
