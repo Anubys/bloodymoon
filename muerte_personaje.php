@@ -36,7 +36,8 @@ if(!isset($_SESSION['uid'])){
 
 mysql_free_result($resultado);
 
-$borrar=mysql_query("DELETE `usuario` FROM `usuario` where`nomusuario`='$user_login'")or die(mysql_error());	
+$borrar=mysql_query("DELETE `usuario` FROM `usuario` where`nomusuario`='$user_login'")or die(mysql_error());
+$reiniciar=mysql_query("UPDATE `escena` SET  `visitada`=0 where `visitada`=1")or die(mysql_error());	
 
  ?>
    <a href="logout.php" data-role="button" data-theme="a">Salir</a>
