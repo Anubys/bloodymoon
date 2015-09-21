@@ -27,7 +27,20 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }else{
-    ?>
+$user_login=$usuario['nomusuario'];
+$loc="despertar";
+$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+    $consultavisita = mysql_query($consulta_visita);
+       while($row = mysql_fetch_assoc($consultavisita)){
+$visita=$row['visitada'];
+       }
+if ($visita ==1){
+ echo "Ya has visitado este lugar";
+ echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
+         }
+	else {
+//$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());	
+        ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
@@ -39,6 +52,9 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
+
 
 ?>
 <br>
@@ -47,6 +63,7 @@ mysql_free_result($resultado);
        </body>
     </div>
   <?php
+}
 }
 //include("footer.php");
 ?>
