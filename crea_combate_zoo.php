@@ -36,7 +36,11 @@ $ataque3=$suma2;
 $tuvida=$usuario['vida_total'];
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
+}
+if ($tuvida <=0) {
+echo "Tu personaje esta muerto";
+echo "<script> document.location.href='muerte_personaje.php';</script>";
+}
     ?>
 	<div data-role="content">
             <?php
@@ -86,9 +90,9 @@ echo "Esta muerta";
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
-                                                 }
-                         ?>
-                       <?php
+                                                 
+?>
+<?php
 		       
 $consulta6="SELECT * FROM escena where ID=9";
     $resultado = mysql_query($consulta6);

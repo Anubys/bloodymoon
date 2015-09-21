@@ -37,7 +37,11 @@ $ataque3=$suma2;
 $tuvida=$usuario['vida_total'];
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
+}
+	if ($tuvida <=0) {
+echo "Tu personaje esta muerto";
+echo "<script> document.location.href='muerte_personaje.php';</script>";
+}
     ?>
 	<div data-role="content">
             <?php
@@ -87,9 +91,9 @@ echo "Esta muerta";
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
-                                                 }
-                         ?>
-                       <?php
+                                                 
+?>
+<?php
 		       
 $consulta6="SELECT * FROM escena where ID=9";
     $resultado = mysql_query($consulta6);
@@ -107,11 +111,11 @@ while($row = mysql_fetch_assoc($consultafue)){
     $ataque_contrario=$aleatorio1+$muestrafuerza;
 echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daño";
 $tu_daño=$tuvida-$ataque_contrario;
-$upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daño' where`nomusuario`='$user_login'")or die(mysql_error());
+ $upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daño' where`nomusuario`='$user_login'")or die(mysql_error());
 echo "Te quedan $tu_daño de vida";
 if ($tuvida <=0) {
-echo "Tu personaje esta muerto";
- echo "<script> document.location.href='muerte_personaje.php';</script>";
+//echo "Tu personaje esta muerto";
+echo "<script> document.location.href='muerte_personaje.php';</script>";
 }
 $consulta5="SELECT * FROM escena where ID=10";
     $resultado = mysql_query($consulta5);
