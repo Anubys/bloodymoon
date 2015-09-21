@@ -22,6 +22,9 @@
 session_start();
 include("conexion.php");
 include("sentencias.php");
+$caza_aleatoria=rand(1,9);
+$tusangre=$usuario['sangre_rabia'];
+$user_login=$usuario['nomusuario'];
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
@@ -36,6 +39,13 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
+echo '</br>';
+echo "A tu enemigo todavia le queda algo de sangre por lo que decides, intentar beber algo de sus sangre";
+echo '</br>';
+$recupera_sangre=$tusangre+$caza_aleatoria;
+$upda=mysql_query("UPDATE `usuario` SET `sangre_rabia`='$recupera_sangre' where`nomusuario`='$user_login'")or die(mysql_error());
+echo "recuperas $caza_aleatoria de sangre";
+
 
  ?>
    <a href="historia.php" data-role="button" data-theme="a">Continuar</a>
