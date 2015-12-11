@@ -28,9 +28,7 @@ echo "Logeado";
               <?php
    }
     ?>
-        </div>
-    <a href="registro.php">Crear Usuario</a>
-<div data-role="footer">
-        <h2>Pie</h2>
+        <div data-role="footer">
+        <h2>BloodyMoon</h2>
     </div>
 </div>
