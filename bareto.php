@@ -29,21 +29,21 @@ if(!isset($_SESSION['uid'])){
     }else{
 		$user_login=$usuario['nomusuario'];
 		$loc="bareto";
-$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+		$consulta_visita="SELECT bareto FROM usuario where `nomusuario`='$user_login'";
     $consultavisita = mysql_query($consulta_visita);
        while($row = mysql_fetch_assoc($consultavisita)){
-$visita=$row['visitada'];
-       }
-if ($visita ==1){
- echo "Ya has visitado este lugar";
- echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
- 
-        }
-	
-	else {
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());	
-    ?>
-    <div data-role="content">
+$visita=$row['bareto'];
+	   }
+	   if ($visita==1)
+	   {
+echo "Ya has visitado este lugar";
+echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';	 
+	   }
+	   else
+ { 
+$visitada=mysql_query("UPDATE `usuario` SET `bareto`='1'where`nomusuario`='$user_login'")or die(mysql_error());
+?>
+<div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
     $consulta2="SELECT * FROM escena where ID=5";
@@ -54,7 +54,7 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
    }
 
 mysql_free_result($resultado);
-
+$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
 ?>
 <br>
 <?php
@@ -69,18 +69,15 @@ echo "Un camarero, alto y bien formado se acerca hacia ti, dedicandote una magni
        
    }
    mysql_free_result($resultado2);
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
-$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
-   ?>
+  }
+?>    
+   </div>
 <a href="interior.php" data-role="button" data-mini="true">Si,gracias</a>
 <a href="mapa.php" data-role="button" data-mini="true">No,me largo</a>
-       </body>
-    </div>
-  <?php
+       </div>
+    </body>
+	</html>
+<?php
 }
-	}
 //include("footer.php");
-?>
-    </div>
-
-    
+?>	

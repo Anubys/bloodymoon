@@ -29,10 +29,10 @@ if(!isset($_SESSION['uid'])){
     }else{
 		$loc="libreria";
 $user_login=$usuario['nomusuario'];
-$consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
+$consulta_visita="SELECT libreria FROM usuario where `nomusuario`='$user_login'";
     $consultavisita = mysql_query($consulta_visita);
        while($row = mysql_fetch_assoc($consultavisita)){
-$visita=$row['visitada'];
+$visita=$row['libreria'];
        }
 if ($visita ==1){
  echo "Ya has visitado este lugar";
@@ -41,7 +41,7 @@ if ($visita ==1){
         }
 	
 	else {
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
+$visitada=mysql_query("UPDATE `usuario` SET `libreria`='1'where`nomusuario`='$user_login'")or die(mysql_error());
 					    ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -55,7 +55,6 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
 
 mysql_free_result($resultado);
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
-$visitada=mysql_query("UPDATE `escena` SET `visitada`='1' where`nombre`='$loc'")or die(mysql_error());
 ?>
 <br>
 <?php
