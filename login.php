@@ -61,7 +61,8 @@ switch($localizacion) {
 		echo "<script> document.location.href='palacio_noentrar.php';</script>";
         break;
    default:
-       echo "<script> document.location.href='jugar.php';</script>";
+       echo "<script> document.location.href='#jugar.php';</script>";
+	  
 }
 			 
         }

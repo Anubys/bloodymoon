@@ -41,11 +41,14 @@ if(isset($_POST['registro'])){
                          if($raza=="Vampiro"){
                             
             echo "Has elegido vampiro";
-            			$upda=mysql_query("UPDATE `usuario` SET FUE=FUE+2,AGI=AGI+3,CAR=CAR+2,RES=RES+1")or die(mysql_error());
-            }
+            			$upda=mysql_query("UPDATE `usuario` SET FUE=FUE+2,AGI=AGI+3,CAR=CAR+2,RES=RES+1 WHERE `nomusuario`='$nomusuario'and `raza`='$raza'")or die(mysql_error());
+            }else if ($raza=="Hombre Lobo") {
+				echo "Has elegido Hombre lobo";
+				$upda2=mysql_query("UPDATE `usuario` SET FUE=FUE+3,AGI=AGI+3,CAR=CAR+2,RES=RES+4 WHERE `nomusuario`='$nomusuario' and `raza`='$raza'")or die(mysql_error());
+			}
             
             echo "Registro completo!";
-	    echo "<script> document.location='index.php';</script>";
+	    header('Location: index.php');
         }
     }
 }
@@ -58,8 +61,8 @@ E-mail: <input type="text" name="email"/><br />
  <label>Raza:</label>
 <select name="raza">
 <option value="Vampiro">Vampiro</option>
-<!--<option value="Hombre Lobo">Hombre Lobo</option>
-<option value="Humano">Humano</option>-->
+<option value="Hombre Lobo">Hombre Lobo</option>
+<!--<option value="Humano">Humano</option>-->
 </select>
 <input type="submit" name="registro" value="Registro"/>
 </form>
