@@ -1,7 +1,5 @@
 <html>
 <head>
-
-
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" href="estilo.css" >
@@ -43,7 +41,7 @@ if(!isset($_SESSION['uid'])){
 
 mysql_free_result($resultado);
 echo '</br>';
-echo "A tu enemigo todavia le queda algo de sangre por lo que decides, intentar beber algo de sus sangre";
+echo "Rebuscando entre tus posesiones encuentras un pequeño amuleto echo de hueso, que decides guardar,a tu enemigo todavia le queda algo de sangre por lo que decides, intentar beber algo de sus sangre";
 echo '</br>';
 $recupera_sangre=$tusangre+$caza_aleatoria;
 $upda=mysql_query("UPDATE `usuario` SET `sangre_rabia`='$recupera_sangre' where`nomusuario`='$user_login'")or die(mysql_error());

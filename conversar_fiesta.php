@@ -26,7 +26,10 @@ include("conexion.php");
 include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
+}
+		 else{
+$loc="conversar_fiesta";
+$user_login=$usuario['nomusuario']
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -39,7 +42,6 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
-
 ?>
 <br>
 <?php

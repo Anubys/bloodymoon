@@ -55,6 +55,17 @@ if(!isset($_SESSION['uid'])){
    <input type="range" name="slider" id="slider-0" value=<?php echo $usuario['vida_total']; ?> min=<?php echo $usuario['vida_total']; ?> max=<?php echo $usuario['sangre_rabia']; ?>  />
 	<input type="submit" data-inline="false" value="Actualiza">
 	</form>
+	<table data-role="table" class="ui-responsive">
+	<tr>
+		    <tbody>
+           <td>Inventario:</td>
+		   </tr>
+		   <td><i><?php echo $usuario['amuleto']; ?></i></td>
+		   <td><i><?php echo $usuario['entrada']; ?></i></td>
+		   <td><i><?php echo $usuario['libro']; ?></i></td>
+	 </tr>
+	 	 	</tbody>
+    </table>
 	</div>
 	<?php
 }

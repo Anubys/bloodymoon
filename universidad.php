@@ -61,10 +61,9 @@ echo "Soltadme malditos,ayudame por favor,te estan utilizando,no te estan contan
 ?>
 <br>
 <?php
-echo "Durante unos segundos se pasa por tu cabeza la idea de coger el cuchillo y ayudarle,perto tal vez sea mejor no inviscuirse";
+echo "El muchacho es tu objetivo, el principe te lo ha dejado muy claro, asi que coges el cuchillo y decides ayudarle";
 ?>
 <a href="combate_cuchillo.php" data-role="button" data-mini="true">Coges el cuchillo</a>
-<a href="mapa.php" data-role="button" data-mini="true">Salir de alli</a>
        </body>
     </div>
   <?php

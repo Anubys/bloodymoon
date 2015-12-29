@@ -20,17 +20,15 @@
 </div> 
     </div>
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
 session_start();
 include("conexion.php");
 include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
-}else{
-	$loc="interior";
-$user_login=$usuario['nomusuario'];
-$upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
-    ?>
+    }else{
+		$user_login=$usuario['nomusuario'];
+		$loc="interior";		  
+?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
@@ -64,7 +62,7 @@ echo "La mujer comienza a avanzar hacia ti con paso firme y cara de muy pocos am
     </div>
   <?php
 }
-//include("footer.php");
+	//include("footer.php");
 ?>
     </div>
 
