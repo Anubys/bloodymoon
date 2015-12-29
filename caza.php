@@ -24,13 +24,14 @@
 session_start();
 include("conexion.php");
 include("sentencias.php");
+if(!isset($_SESSION['uid'])){
+    echo "Tienes que estar logeado para ver esta pagina!";
+	}else{
+$loc="caza";
 $caza_aleatoria=rand(1,9);
 $tusangre=$usuario['sangre_rabia'];
 $user_login=$usuario['nomusuario'];
-if(!isset($_SESSION['uid'])){
-    echo "Tienes que estar logeado para ver esta pagina!";
-}else{
-    ?>
+	    ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
     <?php
@@ -42,7 +43,6 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
-
 ?>
 <br>
 <?php
@@ -55,7 +55,7 @@ echo "La fiesta esta repleta recuperas $caza_aleatoria de sangre";
        </body>
     </div>
   <?php
-}
+	}
 //include("footer.php");
 ?>
     </div>
