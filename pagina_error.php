@@ -3,7 +3,7 @@
  <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>BloodyMoon B01</title> 
+<title>BloodyMoon Conexion</title> 
 </link>
 </meta>
 </head>
@@ -11,7 +11,7 @@
 </div>
  <body>
   <div id="cuerpo">
-<h4><strong><CENTER>PAGINA ACTUALMENTE EN MANTENIMIENTO</CENTER></strong></h4>
+<h4><strong><CENTER>NO SE PUEDE CONECTAR CON LA BASE DE DATOS</CENTER></strong></h4>
 <h4><b><CENTER>disculpen las molestias</CENTER></b></h4>
 
 </body>
