@@ -66,7 +66,7 @@ $vida_enemigo=$row['vida'];
 $upda=mysql_query("UPDATE `combate` SET `vida`='$daño'where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
 if ($vida_enemigo <=0){
 echo "Esta muerta";
-$borrar=mysql_query("DELETE `combate` FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
+$borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
  echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
 } elseif ($menu=="2") {
@@ -80,7 +80,7 @@ $borrar=mysql_query("DELETE `combate` FROM `combate` where`id_usuario`='$id_usua
     $upda=mysql_query("UPDATE `combate` SET `vida`='$daño' where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
   if ($vida_enemigo <=0){
   echo "Esta muerta";
-  $borrar=mysql_query("DELETE `combate` FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
+  $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
    echo "<script> document.location.href='muerte_contrincante.php';</script>";
   }
 }  elseif ($menu=="3") {
@@ -94,7 +94,7 @@ $borrar=mysql_query("DELETE `combate` FROM `combate` where`id_usuario`='$id_usua
     $upda=mysql_query("UPDATE `combate` SET `vida`='$daño' where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
   if ($vida_enemigo <=0){
   echo "Esta muerta";
-  $borrar=mysql_query("DELETE `combate` FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
+  $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario' and id_enemigo='id_enemigo'")or die(mysql_error());
    echo "<script> document.location.href='muerte_contrincante.php';</script>";
   }
        	}
