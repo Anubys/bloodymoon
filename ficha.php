@@ -11,6 +11,13 @@
 		 <div data-role="page">
     <div data-role="header">
         <h2>BloodyMoon</h2>
+        <div data-role="navbar">
+         <ul>
+            <li><a href="ficha.php" data-icon="grid" >Ficha</a></li>
+            <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
+            <li><a href="logout.php" data-icon="star">Salir</a></li>
+         </ul>
+      </div> 
     </div>
     <?php
 session_start();
@@ -31,10 +38,10 @@ if(!isset($_SESSION['uid'])){
             <td><i><?php echo $usuario['raza']; ?></i></td>
         </tr>
 		<td>Caracteristicas:</td>
-		
+
 		        <td>FUE:<i><?php echo $usuario['FUE']; ?></i></td>
 			<td>AGI:<i><?php echo $usuario['AGI']; ?></i></td>
-			</tr>			
+			</tr>
 			<td>INT:<i><?php echo $usuario['INT']; ?></i></td>
 			<td>CAR:<i><?php echo $usuario['CAR']; ?></i></td>
 			<td>REST:<i><?php echo $usuario['RES'];?></i></td>
@@ -44,12 +51,12 @@ if(!isset($_SESSION['uid'])){
 	</tr>
 		 <td>Vida:</td>
         <td><i><?php echo $usuario['vida_total']; ?></i></td>
-			      
+
         </tr>
     </tbody>
     </table>
 		Cuando tu vida este por debajo de tu reserva de sangre, puedes gastar sangre para recuperar vida.
-		
+
 	<form <form data-ajax="false" method="post" action="actualiza_vida.php">
 	<label for="slider-0">Vida:</label>
    <input type="range" name="slider" id="slider-0" value=<?php echo $usuario['vida_total']; ?> min=<?php echo $usuario['vida_total']; ?> max=<?php echo $usuario['sangre_rabia']; ?>  />

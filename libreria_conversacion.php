@@ -17,9 +17,9 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
-    
+
     <?php
 session_start();
 include("conexion.php");
@@ -31,17 +31,18 @@ if(!isset($_SESSION['uid'])){
 $user_login=$usuario['nomusuario'];
 $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$user_login'")or die(mysql_error());
 $upda=mysql_query("UPDATE `usuario` SET `tiene_libro`='1' where`nomusuario`='$user_login'")or die(mysql_error());
+$upda3=mysql_query("UPDATE `usuario` SET `libro`='libro' where`nomusuario`='$user_login'")or die(mysql_error());
 
 					    ?>
     <div data-role="content">
-    
+
 <?php
     $consulta3="SELECT * FROM actores where nombre='librero'";
     $resultado2 = mysql_query($consulta3);
     while ($fila = mysql_fetch_assoc($resultado2)) {
-	 echo '<img src="'.$fila["imagen"].'">';	
+	 echo '<img src="'.$fila["imagen"].'">';
      echo $fila["charla"];
-       
+
    }
    mysql_free_result($resultado2);
    ?>
@@ -53,5 +54,3 @@ $upda=mysql_query("UPDATE `usuario` SET `tiene_libro`='1' where`nomusuario`='$us
 //include("footer.php");
 ?>
     </div>
-
-    

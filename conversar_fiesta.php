@@ -17,10 +17,10 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
+//header('Content-Type: text/html; charset=UTF-8');
 session_start();
 include("conexion.php");
 include("sentencias.php");
@@ -42,6 +42,7 @@ $user_login=$usuario['nomusuario']
    }
 
 mysql_free_result($resultado);
+$upda=mysql_query("UPDATE `usuario` SET `entrada`='entrada' where`nomusuario`='$user_login'")or die(mysql_error());
 ?>
 <br>
 <?php
@@ -57,5 +58,3 @@ echo "La fiesta esta repleta tal vez es en buen lugar para alimentarte";
 //include("footer.php");
 ?>
     </div>
-
-    

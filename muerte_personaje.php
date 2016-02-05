@@ -20,8 +20,9 @@
 session_start();
 include("conexion.php");
 include("sentencias.php");
+$id_usuario=$usuario['id'];
 if(!isset($_SESSION['uid'])){
-    echo "Tienes que estar logeado para ver esta pagina!";
+      echo "Tienes que estar logeado para ver esta pagina!";
     }else{
 		$user_login=$usuario['nomusuario'];
     ?>
@@ -35,8 +36,8 @@ if(!isset($_SESSION['uid'])){
    }
 
 mysql_free_result($resultado);
-
-$borrar=mysql_query("DELETE `usuario` FROM `usuario` where`nomusuario`='$user_login'")or die(mysql_error());
+$borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
+$borrar2=mysql_query("DELETE `usuario` FROM `usuario` where`nomusuario`='$user_login'")or die(mysql_error());
  ?>
    <a href="logout.php" data-role="button" data-theme="a">Salir</a>
   </body>

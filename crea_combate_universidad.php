@@ -17,17 +17,17 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
 <?php
 session_start();
 $menu=$_POST['menu'];
 include("conexion.php");
 include("sentencias.php");
-$cuchillo=rand(1,10);
 $aleatorio1=rand(1,6);
 $aleatorio2=rand(1,4);
 $fuerza=$usuario['FUE'];
+$cuchillo=rand(1,10);
 $user_login=$usuario['nomusuario'];
 $suma1=$cuchillo+$fuerza;
 $suma2=$aleatorio2+$fuerza;
@@ -35,66 +35,77 @@ $ataque1=$suma1;
 $ataque2=$suma1+2;
 $ataque3=$suma2;
 $tuvida=$usuario['vida_total'];
+$id_usuario=$usuario['id'];
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }
-	if ($tuvida <=0) {
+
+if ($tuvida <=0) {
 echo "Tu personaje esta muerto";
 echo "<script> document.location.href='muerte_personaje.php';</script>";
 }
+$consultaTactores="SELECT * FROM actores where nombre='fornido'";
+            $consultamultiple = mysql_query($consultaTactores);
+               while($row = mysql_fetch_assoc($consultamultiple)){
+        $vida_enemigo=$row['vida'];
+        $id_enemigo=$row['ID'];
+      }
+      $query = "insert into `combate` (`id_usuario`,`id_enemigo`,`vida`) values
+        ('$id_usuario','$id_enemigo','$vida_enemigo')";
+        $result = mysql_query($query)
     ?>
 	<div data-role="content">
             <?php
             if($menu=="1") {
-echo "Te lanzas blandiendo el cuchillo hacia el, le haces $ataque1 puntos de daño";
- $consulta2="SELECT * FROM actores where nombre='fornido'";
+echo "Te lanzas blandiendo el cuchillo hacia el, le haces $ataque1 puntos de daÃ±o";
+$consulta2="SELECT * FROM combate where id_enemigo=$id_enemigo and id_usuario=$id_usuario";
     $consultavida = mysql_query($consulta2);
        while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
+$vida_enemigo=$row['vida'];
 }
-  $daño=$muestravida-$ataque1;
-$upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='fornido'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0){
+   $daÃ±o=$vida_enemigo-$ataque1;
+$upda=mysql_query("UPDATE `combate` SET `vida`='$daÃ±o'where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
+if ($vida_enemigo <=0){
 echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_universidad.php';</script>";
+$borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
+ echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
 } elseif ($menu=="2") {
-echo "Sacas los colmillos y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
-$consulta3="SELECT * FROM actores where nombre='fornido'";
-    $consultavida = mysql_query($consulta3);
-       while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
-       }
-$daño=$muestravida-$ataque2;
-$upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='fornido'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0){
-echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_universidad.php';</script>";
-}
+  echo "Te lanzas con los colmillos a su yugular y le haces $ataque2 puntos de daÃ±o";
+  $consulta2="SELECT * FROM combate where id_enemigo=$id_enemigo and id_usuario=$id_usuario";
+      $consultavida = mysql_query($consulta2);
+         while($row = mysql_fetch_assoc($consultavida)){
+  $vida_enemigo=$row['vida'];
+  }
+    $daÃ±o=$vida_enemigo-$ataque2;
+    $upda=mysql_query("UPDATE `combate` SET `vida`='$daÃ±o' where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
+  if ($vida_enemigo <=0){
+  echo "Esta muerta";
+  $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
+   echo "<script> document.location.href='muerte_contrincante.php';</script>";
+  }
 }  elseif ($menu=="3") {
-	echo "Propinas un garrazo que hace $ataque3 puntos de daño";
-	$consulta4="SELECT * FROM actores where nombre='fornido'";
-    $consultavida = mysql_query($consulta4);
-       while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
-       }
-       $daño=$muestravida-$ataque3;
-       $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='fornido'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0) {
-echo "Esta muerta";
- echo "<script> document.location.href='muerte_contrincante_universidad.php';</script>";
-}
+  echo "Te lanzas con los colmillos a su yugular y le haces $ataque3 puntos de daÃ±o";
+  $consulta2="SELECT * FROM combate where id_enemigo=$id_enemigo and id_usuario=$id_usuario";
+      $consultavida = mysql_query($consulta2);
+         while($row = mysql_fetch_assoc($consultavida)){
+  $vida_enemigo=$row['vida'];
+  }
+     $daÃ±o=$vida_enemigo-$ataque3;
+    $upda=mysql_query("UPDATE `combate` SET `vida`='$daÃ±o' where id_enemigo=$id_enemigo and id_usuario=$id_usuario")or die(mysql_error());
+  if ($vida_enemigo <=0){
+  echo "Esta muerta";
+$borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
+   echo "<script> document.location.href='muerte_contrincante.php';</script>";
+  }
        	}
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
-                                                 
+
 ?>
 <?php
-		       
+
 $consulta6="SELECT * FROM escena where ID=9";
     $resultado = mysql_query($consulta6);
     while ($fila = mysql_fetch_assoc($resultado)) {
@@ -109,13 +120,13 @@ while($row = mysql_fetch_assoc($consultafue)){
     $muestrafuerza=$row['FUE'];
 }
     $ataque_contrario=$aleatorio1+$muestrafuerza;
-echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daño";
-$tu_daño=$tuvida-$ataque_contrario;
- $upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daño' where`nomusuario`='$user_login'")or die(mysql_error());
-echo "Te quedan $tu_daño de vida";
+echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daÃ±o";
+$tu_daÃ±o=$tuvida-$ataque_contrario;
+$upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daÃ±o' where`nomusuario`='$user_login'")or die(mysql_error());
+echo "Te quedan $tu_daÃ±o de vida";
 if ($tuvida <=0) {
-//echo "Tu personaje esta muerto";
-echo "<script> document.location.href='muerte_personaje.php';</script>";
+echo "Tu personaje esta muerto";
+ echo "<script> document.location.href='muerte_personaje.php';</script>";
 }
 $consulta5="SELECT * FROM escena where ID=10";
     $resultado = mysql_query($consulta5);
@@ -135,4 +146,4 @@ $consulta5="SELECT * FROM escena where ID=10";
  </form>
 </div>
 <br>
-        </div>  
+        </div>

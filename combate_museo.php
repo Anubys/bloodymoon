@@ -17,7 +17,7 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
 session_start();
@@ -44,7 +44,7 @@ mysql_free_result($resultado);
 <select name="menu">
 <option value="1">Mordisco</option>
 <option value="2">Garra</option>
-<option value="3">Puñetazo</option>
+<option value="3">PuÃ±etazo</option>
 </select>
 <div><input type="submit" value="Ataca"/>
  </form>
@@ -54,7 +54,3 @@ mysql_free_result($resultado);
 }
 //include("footer.php");
 ?>
-
-    
-
-    

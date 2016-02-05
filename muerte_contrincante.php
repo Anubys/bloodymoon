@@ -17,7 +17,7 @@
       <li><a href="mapa.php" data-icon="plus">Localizaciones</a></li>
       <li><a href="logout.php" data-icon="star">Logout</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
 session_start();
@@ -43,11 +43,12 @@ mysql_free_result($resultado);
 echo '</br>';
 echo "Rebuscando entre tus posesiones encuentras un pequeño amuleto echo de hueso, que decides guardar,a tu enemigo todavia le queda algo de sangre por lo que decides, intentar beber algo de sus sangre";
 echo '</br>';
+$upda=mysql_query("UPDATE `usuario` SET `amuleto`='amuleto' where`nomusuario`='$user_login'")or die(mysql_error());
 $recupera_sangre=$tusangre+$caza_aleatoria;
 $upda=mysql_query("UPDATE `usuario` SET `sangre_rabia`='$recupera_sangre' where`nomusuario`='$user_login'")or die(mysql_error());
 echo "recuperas $caza_aleatoria de sangre";
  ?>
-     <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
+     <a href="fiesta.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php

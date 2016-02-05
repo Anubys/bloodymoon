@@ -17,7 +17,7 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
 <?php
 session_start();
@@ -34,66 +34,31 @@ $ataque1=$suma1+1;
 $ataque2=$suma1+2;
 $ataque3=$suma2;
 $tuvida=$usuario['vida_total'];
+$id_usuario=$usuario['id'];
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
 }
+
 if ($tuvida <=0) {
 echo "Tu personaje esta muerto";
 echo "<script> document.location.href='muerte_personaje.php';</script>";
-}
     ?>
 	<div data-role="content">
             <?php
             if($menu=="1") {
-echo "Te lanzas con los colmillos a su yugular y le haces $ataque1 puntos de daño";
- $consulta2="SELECT * FROM actores where nombre='eric'";
-    $consultavida = mysql_query($consulta2);
-       while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
+echo "Te lanzas con los colmillos a su yugular y le haces $ataque1 puntos de daÃ±o";
 }
-  $daño=$muestravida-$ataque1;
-$upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='eric'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0){
-echo "Esta muerta";
- echo "<script> document.location.href='huida_museo.php';</script>";
-}
-} elseif ($menu=="2") {
-echo "Sacas las garras y te lanzas hacia tu oponente realizando $ataque2 puntos de daño";
-$consulta3="SELECT * FROM actores where nombre='eric'";
-    $consultavida = mysql_query($consulta3);
-       while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
-       }
-$daño=$muestravida-$ataque2;
-$upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='eric'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0){
-echo "Esta muerta";
- echo "<script> document.location.href='huida_museo.php';</script>";
-}
-}  elseif ($menu=="3") {
-	echo "Propinas un puñetazo que hace $ataque3 puntos de daño";
-	$consulta4="SELECT * FROM actores where nombre='eric'";
-    $consultavida = mysql_query($consulta4);
-       while($row = mysql_fetch_assoc($consultavida)){
-$muestravida=$row['vida'];
-       }
-       $daño=$muestravida-$ataque3;
-       $upda=mysql_query("UPDATE `actores` SET `vida`='$daño' where`nombre`='eric'")or die(mysql_error());
-//echo "le queda $daño de vida";
-if ($muestravida <=0) {
-echo "Esta muerta";
- echo "<script> document.location.href='huida_museo.php';</script>";
-}
-       	}
+elseif ($menu=="2") {
+  echo "Te lanzas con los colmillos a su yugular y le haces $ataque2 puntos de daÃ±o";
+    }
+elseif ($menu=="3") {
+  echo "Te lanzas con los colmillos a su yugular y le haces $ataque3 puntos de daÃ±o";
+  }
 	else {
 		echo "Tienes que seleccionar un ataque";
 		}
-
 ?>
 <?php
-		       
 $consulta6="SELECT * FROM escena where ID=9";
     $resultado = mysql_query($consulta6);
     while ($fila = mysql_fetch_assoc($resultado)) {
@@ -108,10 +73,10 @@ while($row = mysql_fetch_assoc($consultafue)){
     $muestrafuerza=$row['FUE'];
 }
     $ataque_contrario=$aleatorio1+$muestrafuerza;
-echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daño";
-$tu_daño=$tuvida-$ataque_contrario;
-$upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daño' where`nomusuario`='$user_login'")or die(mysql_error());
-echo "Te quedan $tu_daño de vida";
+echo "Tu oponente contraataca con un formidable golpe realizandote  $ataque_contrario puntos de daÃ±o";
+$tu_daÃ±o=$tuvida-$ataque_contrario;
+$upda=mysql_query("UPDATE `usuario` SET `vida_total`='$tu_daÃ±o' where`nomusuario`='$user_login'")or die(mysql_error());
+echo "Te quedan $tu_daÃ±o de vida";
 if ($tuvida <=0) {
 echo "Tu personaje esta muerto";
  echo "<script> document.location.href='muerte_personaje.php';</script>";
@@ -128,10 +93,10 @@ $consulta5="SELECT * FROM escena where ID=10";
 <select name="menu">
 <option value="1">Mordisco</option>
 <option value="2">Garra</option>
-<option value="3">Puñetazo</option>
+<option value="3">PuÃ±etazo</option>
 </select>
 <div><input type="submit" value="Volver A Atacar"/>
  </form>
 </div>
 <br>
-        </div>  
+        </div>
