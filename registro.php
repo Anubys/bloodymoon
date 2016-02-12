@@ -39,16 +39,17 @@ if(isset($_POST['registro'])){
         else{
                         $ins3 = mysql_query("INSERT INTO `usuario` (`nomusuario`,`password`,`raza`,`FUE`,`AGI`,`INT`,`CAR`,`RES`,`sangre_rabia`,`vida`,`vida_total`) VALUES ('$nomusuario','".md5($password)."','$raza','5','5','5','5','5','10','35','35')") or die(mysql_error());
                          if($raza=="Vampiro"){
-
-            echo "Has elegido vampiro";
-            			$upda=mysql_query("UPDATE `usuario` SET FUE=FUE+2,AGI=AGI+3,CAR=CAR+2,RES=RES+1 WHERE `nomusuario`='$nomusuario'and `raza`='$raza'")or die(mysql_error());
+                        $upda=mysql_query("UPDATE `usuario` SET FUE=FUE+2,AGI=AGI+3,CAR=CAR+2,RES=RES+1 WHERE `nomusuario`='$nomusuario'and `raza`='$raza'")or die(mysql_error());
+                  echo "Registro completado!";
+                  echo '</br>';
+                  echo "<td><a href='header.php'>Iniciar Sesion</a></td>";
             }else if ($raza=="Hombre Lobo") {
 				echo "Has elegido Hombre lobo";
 				$upda2=mysql_query("UPDATE `usuario` SET FUE=FUE+3,AGI=AGI+3,CAR=CAR+2,RES=RES+4 WHERE `nomusuario`='$nomusuario' and `raza`='$raza'")or die(mysql_error());
-          echo "Registro completado!";
+
 			}
-            	     echo "<script> document.location.href='index.php';</script>";
-                   sleep(5);
+
+            	     //echo "<script> document.location.href='header.php';</script>";
         }
     }
 }
