@@ -45,9 +45,10 @@ if(isset($_POST['registro'])){
             }else if ($raza=="Hombre Lobo") {
 				echo "Has elegido Hombre lobo";
 				$upda2=mysql_query("UPDATE `usuario` SET FUE=FUE+3,AGI=AGI+3,CAR=CAR+2,RES=RES+4 WHERE `nomusuario`='$nomusuario' and `raza`='$raza'")or die(mysql_error());
+          echo "Registro completado!";
 			}
-            echo "Registro completo!";
             	     echo "<script> document.location.href='index.php';</script>";
+                   sleep(5);
         }
     }
 }
@@ -60,7 +61,7 @@ Password: <input type="password" name="password"/><br />
  <label>Raza:</label>
 <select name="raza">
 <option value="Vampiro">Vampiro</option>
-<option value="Hombre Lobo">Hombre Lobo</option>
+<!--<option value="Hombre Lobo">Hombre Lobo</option>-->
 <!--<option value="Humano">Humano</option>-->
 </select>
 <input type="submit" name="registro" value="Registro"/>

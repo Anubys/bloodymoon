@@ -19,10 +19,12 @@ if(isset($_POST['login'])){
     }else{
 		        $nomusuario = ($_POST['nomusuario']);
         $password = ($_POST['password']);
-        
+
         $login_check = mysql_query("SELECT `id` FROM `usuario` WHERE `nomusuario`='$nomusuario' AND `password`='".md5($password)."'") or die(mysql_error());
         if(mysql_num_rows($login_check) == 0){
-            echo "Usuario/password invalido!";
+          echo "Usuario o contraseña invalido";
+          echo "<script>document.location.href='header_error.php';</script>";
+
         }else{
             $get_id = mysql_fetch_assoc($login_check);
             $_SESSION['uid'] = $get_id['id'];
@@ -62,9 +64,9 @@ switch($localizacion) {
         break;
    default:
        echo "<script> document.location.href='#jugar.php';</script>";
-	  
+
 }
-			 
+
         }
     }
 }else{
