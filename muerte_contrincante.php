@@ -48,7 +48,7 @@ $recupera_sangre=$tusangre+$caza_aleatoria;
 $upda=mysql_query("UPDATE `usuario` SET `sangre_rabia`='$recupera_sangre' where`nomusuario`='$user_login'")or die(mysql_error());
 echo "recuperas $caza_aleatoria de sangre";
  ?>
-     <a href="fiesta.php" data-role="button" data-theme="a">Continuar</a>
+     <a href="mapa.php" data-role="button" data-theme="a">Continuar</a>
   </body>
     </div>
   <?php
