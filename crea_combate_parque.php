@@ -67,7 +67,7 @@ $upda=mysql_query("UPDATE `combate` SET `vida`='$daño'where id_enemigo=$id_enem
 if ($vida_enemigo <=0){
 echo "Esta muerta";
 $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
- echo "<script> document.location.href='muerte_contrincante.php';</script>";
+ echo "<script> document.location.href='muerte_contrincante_parque.php';</script>";
 }
 } elseif ($menu=="2") {
   echo "Te lanzas con los colmillos a su yugular y le haces $ataque2 puntos de daño";
@@ -81,7 +81,7 @@ $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or d
   if ($vida_enemigo <=0){
   echo "Esta muerta";
   $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
-   echo "<script> document.location.href='muerte_contrincante.php';</script>";
+   echo "<script> document.location.href='muerte_contrincante_parque.php';</script>";
   }
 }  elseif ($menu=="3") {
   echo "Te lanzas con los colmillos a su yugular y le haces $ataque3 puntos de daño";
@@ -95,7 +95,7 @@ $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or d
   if ($vida_enemigo <=0){
   echo "Esta muerta";
 $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or die(mysql_error());
-   echo "<script> document.location.href='muerte_contrincante.php';</script>";
+   echo "<script> document.location.href='muerte_contrincante_parque.php';</script>";
   }
        	}
 	else {
