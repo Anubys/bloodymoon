@@ -17,9 +17,9 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
-    
+
     <?php
 session_start();
 include("conexion.php");
@@ -27,7 +27,7 @@ include("sentencias.php");
 if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
-	  
+
     ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -46,7 +46,7 @@ mysql_free_result($resultado);
 echo "El torno de le entrada del museo impide la entrada a todos aquellos que no tienen la correspondiente entrada";
 ?>
 <br>
-<a href="mapa.php" data-role="button" data-mini="true">Salir</a>
+<a href="salida.php" data-ajax="false" data-role="button" data-mini="true">Salir</a>
 <br>
        </body>
     </div>
@@ -55,5 +55,3 @@ echo "El torno de le entrada del museo impide la entrada a todos aquellos que no
 //include("footer.php");
 ?>
     </div>
-
-    

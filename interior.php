@@ -17,7 +17,7 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
 session_start();
@@ -27,7 +27,7 @@ if(!isset($_SESSION['uid'])){
     echo "Tienes que estar logeado para ver esta pagina!";
     }else{
 		$user_login=$usuario['nomusuario'];
-		$loc="interior";		  
+		$loc="interior";
 ?>
     <div data-role="content">
     <!--<center><h2>Texto</h2></center>-->
@@ -52,11 +52,11 @@ echo "La mujer comienza a avanzar hacia ti con paso firme y cara de muy pocos am
     $resultado2 = mysql_query($consulta3);
     while ($fila = mysql_fetch_assoc($resultado2)) {
     echo $fila["charla"];
-       
+
    }
    mysql_free_result($resultado2);
    ?>
-<a href="salida.php" data-role="button" data-mini="true">Salir del local</a>
+<a href="salida.php"data-ajax="false" data-role="button" data-mini="true">Salir del local</a>
 <a href="combate.php" data-role="button" data-mini="true">Enfrentarte a ella</a>
        </body>
     </div>
@@ -65,5 +65,3 @@ echo "La mujer comienza a avanzar hacia ti con paso firme y cara de muy pocos am
 	//include("footer.php");
 ?>
     </div>
-
-    

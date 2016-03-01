@@ -17,10 +17,10 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
-//header('Content-Type: text/html; charset=UTF-8'); 
+//header('Content-Type: text/html; charset=UTF-8');
 session_start();
 include("conexion.php");
 include("sentencias.php");
@@ -37,7 +37,7 @@ $visita=$row['parque'];
 	   if ($visita ==1){
  echo "Ya has visitado este lugar";
  echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
- 
+
         }
 		else {
 $visitada=mysql_query("UPDATE `usuario` SET `parque`='1'where`nomusuario`='$user_login'")or die(mysql_error());
@@ -61,7 +61,7 @@ echo "<br />";
 echo "Esto es una fiesta privada";
 ?>
 <br>
-<a href="salida.php" data-role="button" data-mini="true">Sera mejor salir de aqui</a>
+<a href="salida.php" data-ajax="false" data-role="button" data-mini="true">Sera mejor salir de aqui</a>
 <a href="combate_parque.php" data-role="button" data-mini="true">A mi nadie me toca</a>
        </body>
     </div>
@@ -71,5 +71,3 @@ echo "Esto es una fiesta privada";
 //include("footer.php");
 ?>
     </div>
-
-    
