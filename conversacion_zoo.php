@@ -35,7 +35,7 @@ $consulta_visita="SELECT visitada FROM escena where nombre='$loc'";
 $visita=$row['visitada'];
        }
 if ($visita ==1){
- echo "Ya has visitado este lugar";
+echo "<script> document.location.href='sin_salida.php';</script>";
  echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
          }
 		 else {

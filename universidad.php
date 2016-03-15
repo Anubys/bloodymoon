@@ -17,7 +17,7 @@
       <li><a href="mapa.php" data-icon="plus">Mapa</a></li>
       <li><a href="logout.php" data-icon="star">Salir</a></li>
    </ul>
-</div> 
+</div>
     </div>
     <?php
 session_start();
@@ -34,11 +34,11 @@ if(!isset($_SESSION['uid'])){
 $visita=$row['universidad'];
        }
 if ($visita ==1){
- echo "Ya has visitado este lugar";
+echo "<script> document.location.href='sin_salida.php';</script>";
  echo '<a href="mapa.php" data-role="button" data-mini="true">Salida</a>';
- 
+
         }
-	
+
 	else {
 $visitada=mysql_query("UPDATE `usuario` SET `universidad`='1'where`nomusuario`='$user_login'")or die(mysql_error());
     ?>
@@ -72,5 +72,3 @@ echo "El muchacho es tu objetivo, el principe te lo ha dejado muy claro, asi que
 //include("footer.php");
 ?>
     </div>
-
-    

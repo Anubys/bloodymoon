@@ -33,7 +33,7 @@ if(!isset($_SESSION['uid'])){
 $visita=$row['visitada'];
        }
 if ($visita ==1){
- echo "Ya has visitado este lugar";
+echo "<script> document.location.href='sin_salida.php';</script>";
   //echo "<script> document.location.href='mapa.php';</script>";
        }
 else

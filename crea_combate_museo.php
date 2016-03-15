@@ -42,6 +42,7 @@ if(!isset($_SESSION['uid'])){
 if ($tuvida <=0) {
 echo "Tu personaje esta muerto";
 echo "<script> document.location.href='muerte_personaje.php';</script>";
+}
     ?>
 	<div data-role="content">
             <?php
@@ -87,7 +88,6 @@ $consulta5="SELECT * FROM escena where ID=10";
     echo $fila["descripcion"];
     echo '<img src="'.$fila["imagen"].'">';
    }
-
     ?>
     <form data-ajax="false" method="POST" action="huida_museo.php" >
 <select name="menu">
@@ -96,7 +96,7 @@ $consulta5="SELECT * FROM escena where ID=10";
 <option value="3">Puñetazo</option>
 </select>
 <div><input type="submit" value="Volver A Atacar"/>
- </form>
+</form>
 </div>
 <br>
-        </div>
+       </div>
