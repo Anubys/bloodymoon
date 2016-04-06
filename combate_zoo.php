@@ -3,9 +3,9 @@
  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
  <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" type="text/css" href="estilo.css" >
- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+ <link rel="stylesheet" href="jquery.mobile-1.0a4.1.min.css" />
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquery.mobile-1.0a4.1.min.js"></script>
 </head>
 <body>
     <div data-role="page">
@@ -44,7 +44,7 @@ mysql_free_result($resultado);
 <select name="menu">
 <option value="1">Mordisco</option>
 <option value="2">Garra</option>
-<option value="3">Puñetazo</option>
+<option value="3">Puï¿½etazo</option>
 </select>
 <div><input type="submit" value="Ataca"/>
  </form>
