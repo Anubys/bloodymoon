@@ -50,10 +50,10 @@ echo "<script> document.location.href='muerte_personaje.php';</script>";
 echo "Te lanzas con los colmillos a su yugular y le haces $ataque1 puntos de daño";
 }
 elseif ($menu=="2") {
-  echo "Te lanzas con los colmillos a su yugular y le haces $ataque2 puntos de daño";
+  echo "Le das un temible garrazo con tus afiladas garras y le haces $ataque3 puntos de daño";
     }
 elseif ($menu=="3") {
-  echo "Te lanzas con los colmillos a su yugular y le haces $ataque3 puntos de daño";
+  echo "Aciertas a golpearle con un puñetazo certero y le haces $ataque3 puntos de daño";
   }
 	else {
 		echo "Tienes que seleccionar un ataque";

@@ -71,7 +71,7 @@ $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or d
  echo "<script> document.location.href='muerte_contrincante.php';</script>";
 }
 } elseif ($menu=="2") {
-  echo "Te lanzas con los colmillos a su yugular y le haces $ataque2 puntos de daño";
+  echo "Le das un temible garrazo con tus afiladas garras y le haces $ataque3 puntos de daño";
   $consulta2="SELECT * FROM combate where id_enemigo=$id_enemigo and id_usuario=$id_usuario";
       $consultavida = mysql_query($consulta2);
          while($row = mysql_fetch_assoc($consultavida)){
@@ -85,7 +85,7 @@ $borrar=mysql_query("DELETE FROM `combate` where`id_usuario`='$id_usuario'")or d
    echo "<script> document.location.href='muerte_contrincante.php';</script>";
   }
 }  elseif ($menu=="3") {
-  echo "Te lanzas con los colmillos a su yugular y le haces $ataque3 puntos de daño";
+  echo "Aciertas a golpearle con un puñetazo certero y le haces $ataque3 puntos de daño";
   $consulta2="SELECT * FROM combate where id_enemigo=$id_enemigo and id_usuario=$id_usuario";
       $consultavida = mysql_query($consulta2);
          while($row = mysql_fetch_assoc($consultavida)){
