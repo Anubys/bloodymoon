@@ -42,7 +42,7 @@ $upda=mysql_query("UPDATE `usuario` SET `ultima_loc`='$loc' where`nomusuario`='$
    }
 
 mysql_free_result($resultado);
-
+$upda2=mysql_query("UPDATE `usuario` SET `existe_libro`='1' where`nomusuario`='$user_login'")or die(mysql_error());
 ?>
 <br>
 <?php
