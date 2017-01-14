@@ -5,6 +5,9 @@
 }
 .ui-page .ui-content {
     background:black;
+    background-image: url('luna.png');
+    background-repeat: no-repeat;
+}
 }
 [data-role="table"] {
     font-size:small;font-style:normal;color:red;text-shadow: none;
